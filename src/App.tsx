@@ -1,10 +1,13 @@
-function App() {
+import Header from "./components/Header";
 
+function App() {
   return (
     <>
-      
+      <div className="min-h-dvh bg-white text-slate-900">
+        <Header />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
