@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-type MenuProps = {
+type ProfileMenuProps = {
   name: string;
   email: string;
   initials: string;
@@ -12,26 +12,26 @@ export default function ProfileMenu({
   email,
   initials,
   onLogout,
-}: MenuProps) {
-  const [open, setOpen] = useState(false);
+}: ProfileMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
 
-useEffect(() => {
-  if (!open) return;
+  useEffect(() => {
+    if (!isOpen) return;
 
-  const handleClickOutside = (event: MouseEvent) => {
-    const target = event.target as HTMLElement;
-    if (!target.closest("#profile-menu")) setOpen(false);
-  };
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest("#profile-menu")) setIsOpen(false);
+    };
 
-  document.addEventListener("mousedown", handleClickOutside);
-  return () => document.removeEventListener("mousedown", handleClickOutside);
-}, [open]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
 
   return (
     <div className="relative">
       <button
         type="button"
-        onClick={() => setOpen((prev) => !prev)}
+        onClick={() => setIsOpen((prev) => !prev)}
         className="cursor-pointer relative rounded-full overflow-hidden text-white flex items-center justify-center h-8 w-8 lg:h-10 lg:w-10 bg-(--background-default)"
       >
         <span
@@ -42,22 +42,16 @@ useEffect(() => {
         </span>
       </button>
 
-      {open && (
+      {isOpen && (
         <div
           id="profile-menu"
           className="absolute right-0 mt-2 w-56 p-2 rounded-md shadow-[0px_1px_4px_0px_rgba(14,16,23,0.10)] outline-1 -outline-offset-1 outline-(--border-default) inline-flex flex-col justify-start items-start bg-(--background-default-default)"
         >
-          <div
-            className="self-stretch p-2 border-b inline-flex flex-col justify-start items-start gap-2.5 border-(--border-default)"
-          >
-            <p
-              className="self-stretch justify-start text-sm font-medium font-[DM_Sans] leading-5 text-(--text-default)"
-            >
+          <div className="self-stretch p-2 border-b inline-flex flex-col justify-start items-start gap-2.5 border-(--border-default)">
+            <p className="self-stretch justify-start text-sm font-medium font-[DM_Sans] leading-5 text-(--text-default)">
               {name}
             </p>
-            <p
-              className="self-stretch justify-start text-xs font-normal font-[DM_Sans] leading-4 text-(--text-tertiary)"
-            >
+            <p className="self-stretch justify-start text-xs font-normal font-[DM_Sans] leading-4 text-(--text-tertiary)">
               {email}
             </p>
           </div>
@@ -66,7 +60,7 @@ useEffect(() => {
             type="button"
             className="cursor-pointer self-stretch p-2 rounded-lg inline-flex justify-start items-center gap-2"
             onClick={() => {
-              setOpen(false);
+              setIsOpen(false);
               onLogout?.();
             }}
           >
@@ -83,9 +77,7 @@ useEffect(() => {
               />
             </svg>
 
-            <p
-              className="self-stretch justify-start text-sm font-normal font-[DM_Sans] leading-5 line-clamp-1 text-(--text-default)"
-            >
+            <p className="self-stretch justify-start text-sm font-normal font-[DM_Sans] leading-5 line-clamp-1 text-(--text-default)">
               Log out
             </p>
           </button>
