@@ -1,14 +1,9 @@
+import { SearchFiltersHeader } from "..";
+
 export function SearchFilters() {
   return (
-    <section className="w-full max-w-4xl mx-auto px-4 mt-18">
-      <div className="text-left mb-6">
-        <h1 className="text-xl font-semibold text-gray-900">
-          Healthcare Providers
-        </h1>
-        <p className="text-gray-500 mt-1 text-md">
-          Find and connect with healthcare professionals in your area
-        </p>
-      </div>
+    <section className="w-full max-w-4xl mt-16 mx-auto self-stretch px-6 py-3 inline-flex flex-col justify-start items-start gap-4">
+      <SearchFiltersHeader />
 
       <div className="flex flex-col gap-3">
         <div className="relative">
