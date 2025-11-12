@@ -4,4 +4,10 @@
 
 :root {
   font-family: 'DM Sans', sans-serif;
+  --text-default: #1C202E;
+  --text-tertiary: #5A5F70;
+  --text-on-brand: #F5F5F5;
+  --background-default: #2E364C;
+  --background-default-default: #FAFAFB;
+  --border-default: #D1D2D9;
 }

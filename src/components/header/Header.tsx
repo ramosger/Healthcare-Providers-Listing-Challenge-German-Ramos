@@ -1,6 +1,5 @@
 import { ProfileMenu } from "..";
 import { Logo } from "../../assets/icons";
-import { COLORS } from "../../utils/colors";
 
 export default function Header() {
   return (
@@ -11,14 +10,12 @@ export default function Header() {
 
           <div>
             <h2
-              className="font-semibold text-lg lg:text-2xl leading-tight"
-              style={{ color: COLORS.textDefault }}
+              className="font-semibold text-lg lg:text-2xl leading-tight text-(--text-default)"
             >
               HealthConnect
             </h2>
             <p
-              className="font-light text-xs lg:text-sm leading-tight"
-              style={{ color: COLORS.textTertiary }}
+              className="font-light text-xs lg:text-sm leading-tight text-(--text-tertiary)"
             >
               Find your healthcare provider
             </p>
