@@ -3,4 +3,6 @@ export const COLORS = {
   textTertiary: "#5A5F70",
   textOnBrand: "#F5F5F5",
   backgroundDefault: "#2E364C",
+  backgroundDefaultDefault: "#FAFAFB",
+  borderDefault: "#D1D2D9",
 };

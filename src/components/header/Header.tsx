@@ -1,8 +1,7 @@
-import { COLORS } from "../utils/colors";
+import ProfileMenu from "../header/ProfileMenu"
+import { COLORS } from "../../utils/colors";
 
 export default function Header() {
-  const handleAvatarClick = () => {};
-
   return (
     <header className="w-full border-b border-gray-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 lg:py-4 flex items-center justify-between gap-3">
@@ -41,20 +40,12 @@ export default function Header() {
           </div>
         </div>
 
-        <button
-          type="button"
-          onClick={handleAvatarClick}
-          className="relative rounded-full overflow-hidden text-white flex items-center justify-center h-8 w-8 lg:h-10 lg:w-10"
-          style={{ backgroundColor: COLORS.backgroundDefault }}
-        >
-          <span
-            aria-hidden="true"
-            className="font-light font-sans leading-none text-sm lg:text-base"
-            style={{ color: COLORS.textOnBrand }}
-          >
-            AS
-          </span>
-        </button>
+        <ProfileMenu
+          name="Adam Smith"
+          email="adamsmith@gmail.com"
+          initials="AS"
+          onLogout={() => console.log("Log out")}
+        />
       </div>
     </header>
   );
