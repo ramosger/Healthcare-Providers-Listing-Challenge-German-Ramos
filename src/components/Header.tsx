@@ -4,15 +4,14 @@ export default function Header() {
   const handleAvatarClick = () => {};
 
   return (
-    <header className="w-full border-b border-gray-300 bg-white">
-      <div className="mx-auto max-w-screen-sm px-4 py-3 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
+    <header className="w-full border-b border-gray-200 bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 lg:py-4 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3 lg:gap-4">
           <svg
-            width="39"
-            height="39"
             viewBox="0 0 39 39"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="h-9 w-9 lg:h-11 lg:w-11 shrink-0"
           >
             <rect
               width="38.0265"
@@ -28,14 +27,13 @@ export default function Header() {
 
           <div>
             <h2
-              className="font-semibold text-lg leading-tight"
+              className="font-semibold text-lg sm:text-xl lg:text-2xl leading-tight"
               style={{ color: COLORS.textDefault }}
             >
               HealthConnect
             </h2>
-
             <p
-              className="text-xs leading-tight font-light"
+              className="text-xs sm:text-[13px] lg:text-sm leading-tight font-light"
               style={{ color: COLORS.textTertiary }}
             >
               Find your healthcare provider
@@ -46,16 +44,16 @@ export default function Header() {
         <button
           type="button"
           onClick={handleAvatarClick}
-          className="w-8 h-8 relative rounded-full overflow-hidden text-white"
+          className="relative rounded-full overflow-hidden text-white flex items-center justify-center h-8 w-8 lg:h-10 lg:w-10"
           style={{ backgroundColor: COLORS.backgroundDefault }}
         >
-          <p
+          <span
             aria-hidden="true"
-            className="text-center justify-center text-base font-light font-sans leading-6"
+            className="font-light font-sans leading-none text-sm lg:text-base"
             style={{ color: COLORS.textOnBrand }}
           >
             AS
-          </p>
+          </span>
         </button>
       </div>
     </header>
