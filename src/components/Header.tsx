@@ -27,13 +27,13 @@ export default function Header() {
 
           <div>
             <h2
-              className="font-semibold text-lg sm:text-xl lg:text-2xl leading-tight"
+              className="font-semibold text-lg lg:text-2xl leading-tight"
               style={{ color: COLORS.textDefault }}
             >
               HealthConnect
             </h2>
             <p
-              className="text-xs sm:text-[13px] lg:text-sm leading-tight font-light"
+              className="font-light text-xs lg:text-sm leading-tight"
               style={{ color: COLORS.textTertiary }}
             >
               Find your healthcare provider
