@@ -38,7 +38,7 @@ useEffect(() => {
       >
         <span
           aria-hidden="true"
-          className="font-light font-sans leading-none text-sm lg:text-base"
+          className="font-light font-[DM_Sans] leading-none text-sm lg:text-base"
           style={{ color: COLORS.textOnBrand }}
         >
           {initials}
