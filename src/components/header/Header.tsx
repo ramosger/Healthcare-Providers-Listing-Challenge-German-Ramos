@@ -3,28 +3,28 @@ import { Logo } from "../../assets/icons";
 
 export const Header = () => {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 border-b border-gray-200 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 lg:py-4 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-3 lg:gap-4">
+    <header className="fixed top-0 left-0 w-96 p-6 bg-white border-b border-(--border-default) inline-flex justify-between items-center">
+      <div className="w-60 h-10 relative">
+        <div className="w-10 h-10 p-2 left-0 top-0 absolute bg-Background-Brand-Default rounded-lg inline-flex justify-start items-center gap-2">
           <Logo />
-
-          <div>
-            <h2 className="font-semibold text-lg lg:text-2xl leading-tight text-(--text-default)">
-              HealthConnect
-            </h2>
-            <p className="font-light text-xs lg:text-sm leading-tight text-(--text-tertiary)">
-              Find your healthcare provider
-            </p>
-          </div>
         </div>
 
-        <ProfileMenu
-          name="Adam Smith"
-          email="adamsmith@gmail.com"
-          initials="AS"
-          onLogout={() => console.log("Log out")}
-        />
+        <div className="w-48 h-9 left-[49.96px] top-[1.60px] absolute inline-flex flex-col justify-start items-start gap-2">
+          <h2 className="w-36 h-3.5 font-semibold text-lg lg:text-2xl leading-tight text-(--text-default)">
+            HealthConnect
+          </h2>
+          <p className="font-light w-44 h-3 text-xs lg:text-sm leading-tight text-(--text-tertiary)">
+            Find your healthcare provider
+          </p>
+        </div>
       </div>
+
+      <ProfileMenu
+        name="Adam Smith"
+        email="adamsmith@gmail.com"
+        initials="AS"
+        onLogout={() => console.log("Log out")}
+      />
     </header>
   );
 };

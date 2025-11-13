@@ -32,11 +32,11 @@ export const ProfileMenu = ({
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="cursor-pointer relative rounded-full overflow-hidden text-white flex items-center justify-center h-8 w-8 lg:h-10 lg:w-10 bg-(--background-default)"
+        className="size-8 relative rounded-full overflow-hidden bg-(--background-default)"
       >
         <span
           aria-hidden="true"
-          className="font-light font-[DM_Sans] leading-none text-sm lg:text-base text-(--text-on-brand)"
+          className="left-[5.50px] top-[4.50px] absolute text-center justify-center text-base font-normal font-[DM_Sans] leading-6 text-(--text-on-brand)"
         >
           {initials}
         </span>
