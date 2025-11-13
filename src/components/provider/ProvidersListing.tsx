@@ -1,7 +1,7 @@
 export const ProvidersListing = () => {
   return (
     <div className="self-stretch w-full px-6 inline-flex flex-col justify-start items-start gap-3">
-      <div className="self-stretch relative bg-(--background-default-default) rounded-xl outline-1 outline-(--border-default) flex flex-col justify-start items-start overflow-hidden">
+      <div className="self-stretch relative bg-background-default-default rounded-xl outline-1 outline-border-default flex flex-col justify-start items-start overflow-hidden">
         <img
           className="self-stretch h-56"
           src="/src/assets/providers/provider1.png"
@@ -9,10 +9,10 @@ export const ProvidersListing = () => {
         <div className="self-stretch p-5 flex flex-col justify-center items-start gap-5">
           <div className="self-stretch flex flex-col justify-start items-start gap-5">
             <div className="self-stretch flex flex-col justify-start items-start gap-2">
-              <h2 className="self-stretch justify-start text-(--text-default) text-2xl font-semibold font-[DM_Sans]">
+              <h2 className="self-stretch justify-start text-text-default text-2xl font-semibold font-default">
                 Dr. Sarah Johnson
               </h2>
-              <p className="self-stretch justify-start text-(--text-tertiary) text-xl font-medium font-[DM_Sans]">
+              <p className="self-stretch justify-start text-text-tertiary text-xl font-medium font-default">
                 Cardiology
               </p>
             </div>
@@ -34,12 +34,12 @@ export const ProvidersListing = () => {
                           />
                         </svg>
                     </div>
-                    <div className="justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       Metropolitan Medical Center
                     </div>
                   </div>
                   <div className="self-stretch pl-7 inline-flex justify-start items-center gap-1">
-                    <div className="flex-1 justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="flex-1 justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       + 1 more location
                     </div>
                   </div>
@@ -50,8 +50,8 @@ export const ProvidersListing = () => {
 
           <div className="w-full inline-flex flex-col justify-end items-center">
             <div className="w-full flex-1 inline-flex justify-start items-start">
-              <div className="flex-1 px-3 py-2 bg-(--background-default) rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
-                <button className="justify-start text-(--text-neutral) text-base font-medium font-[DM_Sans] leading-6">
+              <div className="flex-1 px-3 py-2 bg-background-default rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
+                <button className="justify-start text-text-neutral text-base font-medium font-default leading-6">
                   View details
                 </button>
               </div>
@@ -60,7 +60,7 @@ export const ProvidersListing = () => {
         </div>
       </div>
 
-      <div className="self-stretch relative bg-(--background-default-default) rounded-xl outline-1 outline-(--border-default) flex flex-col justify-start items-start overflow-hidden">
+      <div className="self-stretch relative bg-background-default-default rounded-xl outline-1 outline-border-default flex flex-col justify-start items-start overflow-hidden">
         <img
           className="self-stretch h-56"
           src="/src/assets/providers/provider2.png"
@@ -68,10 +68,10 @@ export const ProvidersListing = () => {
         <div className="self-stretch p-5 flex flex-col justify-center items-start gap-5">
           <div className="self-stretch flex flex-col justify-start items-start gap-5">
             <div className="self-stretch flex flex-col justify-start items-start gap-2">
-              <h2 className="self-stretch justify-start text-(--text-default) text-2xl font-semibold font-[DM_Sans]">
+              <h2 className="self-stretch justify-start text-text-default text-2xl font-semibold font-default">
                 Dr. Michael Lee
               </h2>
-              <p className="self-stretch justify-start text-(--text-tertiary) text-xl font-medium font-[DM_Sans]">
+              <p className="self-stretch justify-start text-text-tertiary text-xl font-medium font-default">
                 Neurology
               </p>
             </div>
@@ -93,12 +93,12 @@ export const ProvidersListing = () => {
                           />
                         </svg>
                     </div>
-                    <div className="justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       City Hospital
                     </div>
                   </div>
                   <div className="self-stretch pl-7 inline-flex justify-start items-center gap-1">
-                    <div className="flex-1 justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="flex-1 justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       + 2 more location
                     </div>
                   </div>
@@ -109,8 +109,8 @@ export const ProvidersListing = () => {
 
           <div className="w-full inline-flex flex-col justify-end items-center">
             <div className="w-full flex-1 inline-flex justify-start items-start">
-              <div className="flex-1 px-3 py-2 bg-(--background-default) rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
-                <button className="justify-start text-(--text-neutral) text-base font-medium font-[DM_Sans] leading-6">
+              <div className="flex-1 px-3 py-2 bg-background-default rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
+                <button className="justify-start text-text-neutral text-base font-medium font-default leading-6">
                   View details
                 </button>
               </div>
@@ -119,7 +119,7 @@ export const ProvidersListing = () => {
         </div>
       </div>
 
-      <div className="self-stretch relative bg-(--background-default-default) rounded-xl outline-1 outline-(--border-default) flex flex-col justify-start items-start overflow-hidden">
+      <div className="self-stretch relative bg-background-default-default rounded-xl outline-1 outline-border-default flex flex-col justify-start items-start overflow-hidden">
         <img
           className="self-stretch h-56"
           src="/src/assets/providers/provider3.png"
@@ -127,10 +127,10 @@ export const ProvidersListing = () => {
         <div className="self-stretch p-5 flex flex-col justify-center items-start gap-5">
           <div className="self-stretch flex flex-col justify-start items-start gap-5">
             <div className="self-stretch flex flex-col justify-start items-start gap-2">
-              <h2 className="self-stretch justify-start text-(--text-default) text-2xl font-semibold font-[DM_Sans]">
+              <h2 className="self-stretch justify-start text-text-default text-2xl font-semibold font-default">
                 Dr. Emily Carter
               </h2>
-              <p className="self-stretch justify-start text-(--text-tertiary) text-xl font-medium font-[DM_Sans]">
+              <p className="self-stretch justify-start text-text-tertiary text-xl font-medium font-default">
                 Pediatrics
               </p>
             </div>
@@ -152,12 +152,12 @@ export const ProvidersListing = () => {
                           />
                         </svg>
                     </div>
-                    <div className="justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       Metropolitan Children's Hospital
                     </div>
                   </div>
                   <div className="self-stretch pl-7 inline-flex justify-start items-center gap-1">
-                    <div className="flex-1 justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="flex-1 justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       + 3 more location
                     </div>
                   </div>
@@ -168,8 +168,8 @@ export const ProvidersListing = () => {
 
           <div className="w-full inline-flex flex-col justify-end items-center">
             <div className="w-full flex-1 inline-flex justify-start items-start">
-              <div className="flex-1 px-3 py-2 bg-(--background-default) rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
-                <button className="justify-start text-(--text-neutral) text-base font-medium font-[DM_Sans] leading-6">
+              <div className="flex-1 px-3 py-2 bg-background-default rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
+                <button className="justify-start text-text-neutral text-base font-medium font-default leading-6">
                   View details
                 </button>
               </div>
@@ -178,7 +178,7 @@ export const ProvidersListing = () => {
         </div>
       </div>
 
-      <div className="self-stretch relative bg-(--background-default-default) rounded-xl outline-1 outline-(--border-default) flex flex-col justify-start items-start overflow-hidden">
+      <div className="self-stretch relative bg-background-default-default rounded-xl outline-1 outline-border-default flex flex-col justify-start items-start overflow-hidden">
         <img
           className="self-stretch h-56"
           src="/src/assets/providers/provider4.png"
@@ -186,10 +186,10 @@ export const ProvidersListing = () => {
         <div className="self-stretch p-5 flex flex-col justify-center items-start gap-5">
           <div className="self-stretch flex flex-col justify-start items-start gap-5">
             <div className="self-stretch flex flex-col justify-start items-start gap-2">
-              <h2 className="self-stretch justify-start text-(--text-default) text-2xl font-semibold font-[DM_Sans]">
+              <h2 className="self-stretch justify-start text-text-default text-2xl font-semibold font-default">
                 Dr. Emily Margaret McAddams
               </h2>
-              <p className="self-stretch justify-start text-(--text-tertiary) text-xl font-medium font-[DM_Sans]">
+              <p className="self-stretch justify-start text-text-tertiary text-xl font-medium font-default">
                 Pediatrics
               </p>
             </div>
@@ -211,12 +211,12 @@ export const ProvidersListing = () => {
                           />
                         </svg>
                     </div>
-                    <div className="justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       City Children's Hospital
                     </div>
                   </div>
                   <div className="self-stretch pl-7 inline-flex justify-start items-center gap-1">
-                    <div className="flex-1 justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="flex-1 justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       + 2 more location
                     </div>
                   </div>
@@ -227,8 +227,8 @@ export const ProvidersListing = () => {
 
           <div className="w-full inline-flex flex-col justify-end items-center">
             <div className="w-full flex-1 inline-flex justify-start items-start">
-              <div className="flex-1 px-3 py-2 bg-(--background-default) rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
-                <button className="justify-start text-(--text-neutral) text-base font-medium font-[DM_Sans] leading-6">
+              <div className="flex-1 px-3 py-2 bg-background-default rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
+                <button className="justify-start text-text-neutral text-base font-medium font-default leading-6">
                   View details
                 </button>
               </div>
@@ -237,7 +237,7 @@ export const ProvidersListing = () => {
         </div>
       </div>
 
-      <div className="self-stretch relative bg-(--background-default-default) rounded-xl outline-1 outline-(--border-default) flex flex-col justify-start items-start overflow-hidden">
+      <div className="self-stretch relative bg-background-default-default rounded-xl outline-1 outline-border-default flex flex-col justify-start items-start overflow-hidden">
         <img
           className="self-stretch h-56"
           src="/src/assets/providers/provider5.png"
@@ -245,10 +245,10 @@ export const ProvidersListing = () => {
         <div className="self-stretch p-5 flex flex-col justify-center items-start gap-5">
           <div className="self-stretch flex flex-col justify-start items-start gap-5">
             <div className="self-stretch flex flex-col justify-start items-start gap-2">
-              <h2 className="self-stretch justify-start text-(--text-default) text-2xl font-semibold font-[DM_Sans]">
+              <h2 className="self-stretch justify-start text-text-default text-2xl font-semibold font-default">
                 Dr. Michael Smith
               </h2>
-              <p className="self-stretch justify-start text-(--text-tertiary) text-xl font-medium font-[DM_Sans]">
+              <p className="self-stretch justify-start text-text-tertiary text-xl font-medium font-default">
                 Dermatology
               </p>
             </div>
@@ -270,12 +270,12 @@ export const ProvidersListing = () => {
                           />
                         </svg>
                     </div>
-                    <div className="justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       Harborview Skin Clinic
                     </div>
                   </div>
                   <div className="self-stretch pl-7 inline-flex justify-start items-center gap-1">
-                    <div className="flex-1 justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="flex-1 justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       + 1 more location
                     </div>
                   </div>
@@ -286,8 +286,8 @@ export const ProvidersListing = () => {
 
           <div className="w-full inline-flex flex-col justify-end items-center">
             <div className="w-full flex-1 inline-flex justify-start items-start">
-              <div className="flex-1 px-3 py-2 bg-(--background-default) rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
-                <button className="justify-start text-(--text-neutral) text-base font-medium font-[DM_Sans] leading-6">
+              <div className="flex-1 px-3 py-2 bg-background-default rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
+                <button className="justify-start text-text-neutral text-base font-medium font-default leading-6">
                   View details
                 </button>
               </div>
@@ -296,7 +296,7 @@ export const ProvidersListing = () => {
         </div>
       </div>
 
-      <div className="self-stretch relative bg-(--background-default-default) rounded-xl outline-1 outline-(--border-default) flex flex-col justify-start items-start overflow-hidden">
+      <div className="self-stretch relative bg-background-default-default rounded-xl outline-1 outline-border-default flex flex-col justify-start items-start overflow-hidden">
         <img
           className="self-stretch h-56"
           src="/src/assets/providers/no-image.jpg"
@@ -304,10 +304,10 @@ export const ProvidersListing = () => {
         <div className="self-stretch p-5 flex flex-col justify-center items-start gap-5">
           <div className="self-stretch flex flex-col justify-start items-start gap-5">
             <div className="self-stretch flex flex-col justify-start items-start gap-2">
-              <h2 className="self-stretch justify-start text-(--text-default) text-2xl font-semibold font-[DM_Sans]">
+              <h2 className="self-stretch justify-start text-text-default text-2xl font-semibold font-default">
                 Dr. Lisa Patel
               </h2>
-              <p className="self-stretch justify-start text-(--text-tertiary) text-xl font-medium font-[DM_Sans]">
+              <p className="self-stretch justify-start text-text-tertiary text-xl font-medium font-default">
                 Neurology
               </p>
             </div>
@@ -329,12 +329,12 @@ export const ProvidersListing = () => {
                           />
                         </svg>
                     </div>
-                    <div className="justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       Westside Brain Institute
                     </div>
                   </div>
                   <div className="self-stretch pl-7 inline-flex justify-start items-center gap-1">
-                    <div className="flex-1 justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">
+                    <div className="flex-1 justify-start text-text-tertiary text-base font-medium font-default leading-6">
                       + 3 more location
                     </div>
                   </div>
@@ -345,8 +345,8 @@ export const ProvidersListing = () => {
 
           <div className="w-full inline-flex flex-col justify-end items-center">
             <div className="w-full flex-1 inline-flex justify-start items-start">
-              <div className="flex-1 px-3 py-2 bg-(--background-default) rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
-                <button className="justify-start text-(--text-neutral) text-base font-medium font-[DM_Sans] leading-6">
+              <div className="flex-1 px-3 py-2 bg-background-default rounded-md flex justify-center items-center gap-1.5 overflow-hidden">
+                <button className="justify-start text-text-neutral text-base font-medium font-default leading-6">
                   View details
                 </button>
               </div>
