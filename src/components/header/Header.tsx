@@ -8,15 +8,11 @@ export const Header = () => {
         <div className="flex items-center gap-3 lg:gap-4">
           <Logo />
 
-          <div>
-            <h2
-              className="font-semibold text-lg lg:text-2xl leading-tight text-(--text-default)"
-            >
+          <div className="flex flex-col">
+            <h2 className="font-semibold text-lg lg:text-2xl leading-tight text-(--text-default)">
               HealthConnect
             </h2>
-            <p
-              className="font-light text-xs lg:text-sm leading-tight text-(--text-tertiary)"
-            >
+            <p className="font-light text-xs lg:text-sm leading-tight text-(--text-tertiary)">
               Find your healthcare provider
             </p>
           </div>
@@ -31,4 +27,4 @@ export const Header = () => {
       </div>
     </header>
   );
-}
+};
