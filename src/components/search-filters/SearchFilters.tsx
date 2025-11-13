@@ -1,4 +1,9 @@
-import { SearchFiltersHeader, NameFilter, SpecialityFilter } from "..";
+import {
+  SearchFiltersHeader,
+  NameFilter,
+  SpecialityFilter,
+  GenderFilter,
+} from "..";
 
 export function SearchFilters() {
   return (
@@ -11,9 +16,7 @@ export function SearchFilters() {
         <div className="self-stretch inline-flex flex-col justify-center items-start gap-3">
           <SpecialityFilter />
 
-          <select className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-            <option>All genders</option>
-          </select>
+          <GenderFilter />
 
           <select className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             <option>All clinics</option>

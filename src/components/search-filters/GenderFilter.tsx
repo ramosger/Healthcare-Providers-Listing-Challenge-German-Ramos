@@ -1,6 +1,6 @@
 import { ChevronDown } from "../../assets/icons";
 
-export function SpecialityFilter() {
+export function GenderFilter() {
   return (
     <div className="self-stretch flex flex-col justify-start items-start">
       <div className="self-stretch flex flex-col justify-start items-start gap-2">
@@ -8,7 +8,7 @@ export function SpecialityFilter() {
           <div className="flex-1 flex justify-start items-center overflow-hidden">
             <div className="flex-1 self-stretch px-3 py-1.5 flex justify-between items-center">
               <option className="flex-1 justify-start text-(--text-default) text-sm font-normal font-[DM_Sans] leading-5 line-clamp-1">
-                All specialities
+                All genders
               </option>
             </div>
             <div className="self-stretch pr-3 flex justify-start items-center gap-2">
