@@ -1,4 +1,4 @@
-export default function Logo() {
+export const Logo = () => {
   return (
     <svg
       viewBox="0 0 39 39"
@@ -13,4 +13,4 @@ export default function Logo() {
       />
     </svg>
   );
-}
+};

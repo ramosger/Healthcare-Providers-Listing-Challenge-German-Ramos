@@ -7,12 +7,12 @@ type ProfileMenuProps = {
   onLogout?: () => void;
 };
 
-export default function ProfileMenu({
+export const ProfileMenu = ({
   name,
   email,
   initials,
   onLogout,
-}: ProfileMenuProps) {
+}: ProfileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -85,4 +85,4 @@ export default function ProfileMenu({
       )}
     </div>
   );
-}
+};
