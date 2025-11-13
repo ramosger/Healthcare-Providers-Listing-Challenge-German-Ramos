@@ -2,11 +2,8 @@
 
 @import "tailwindcss";
 
-:root {
-  font-family: 'DM Sans', sans-serif;
-}
-
 @theme {
+  --font-default: 'DM Sans', sans-serif;
   --color-text-default: #1C202E;
   --color-text-tertiary: #5A5F70;
   --color-text-on-brand: #F5F5F5;

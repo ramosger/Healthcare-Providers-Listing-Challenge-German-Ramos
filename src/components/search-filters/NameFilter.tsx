@@ -14,7 +14,7 @@ export const NameFilter = () => {
                 <input
                   type="text"
                   placeholder="Search providers by name..."
-                  className="placeholder-text-disabled-default flex-1 justify-start text-text-disabled-default text-sm font-normal font-[DM_Sans] leading-5 line-clamp-1"
+                  className="placeholder-text-disabled-default flex-1 justify-start text-text-disabled-default text-sm font-normal font-default leading-5 line-clamp-1"
                   aria-label="Search providers by name"
                 />
               </div>
