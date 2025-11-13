@@ -34,12 +34,7 @@ export const ProfileMenu = ({
         onClick={() => setIsOpen((prev) => !prev)}
         className="cursor-pointer relative rounded-full overflow-hidden text-white flex items-center justify-center h-8 w-8 lg:h-10 lg:w-10 bg-(--background-default)"
       >
-        <span
-          aria-hidden="true"
-          className="font-light font-[DM_Sans] leading-none text-sm lg:text-base text-(--text-on-brand)"
-        >
-          {initials}
-        </span>
+        {initials}
       </button>
 
       {isOpen && (
