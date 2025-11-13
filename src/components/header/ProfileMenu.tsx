@@ -33,7 +33,7 @@ export const ProfileMenu = ({
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="size-8 lg:size-12 relative rounded-full overflow-hidden bg-(--background-default)"
+        className="size-8 text-white lg:size-12 relative rounded-full overflow-hidden bg-(--background-default)"
       >
         {initials}
       </button>
