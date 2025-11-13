@@ -1,4 +1,4 @@
-export function ChevronDown() {
+export const ChevronDown = () => {
   return (
     <svg
       width="16"
@@ -13,4 +13,4 @@ export function ChevronDown() {
       />
     </svg>
   );
-}
+};

@@ -1,4 +1,4 @@
-export function SearchFiltersHeader() {
+export const SearchFiltersHeader = () => {
   return (
     <div className="flex flex-col justify-start items-start gap-1">
       <h1 className="w-80 justify-center text-(--text-default) text-2xl font-semibold font-[DM_Sans]">

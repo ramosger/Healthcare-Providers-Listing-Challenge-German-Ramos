@@ -1,6 +1,6 @@
 import { ChevronDown } from "../../assets/icons";
 
-export function GenderFilter() {
+export const GenderFilter = () => {
   return (
     <div className="self-stretch flex flex-col justify-start items-start">
       <div className="self-stretch flex flex-col justify-start items-start gap-2">

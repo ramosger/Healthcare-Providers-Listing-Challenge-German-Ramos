@@ -1,6 +1,6 @@
 import { ChevronDown } from "../../assets/icons";
 
-export function ClinicFilter() {
+export const ClinicFilter = () => {
   return (
     <div className="self-stretch flex flex-col justify-start items-start">
       <div className="self-stretch flex flex-col justify-start items-start gap-2">
@@ -21,4 +21,4 @@ export function ClinicFilter() {
       </div>
     </div>
   );
-}
+};

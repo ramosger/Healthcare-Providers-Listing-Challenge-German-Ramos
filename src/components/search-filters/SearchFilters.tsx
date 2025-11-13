@@ -3,10 +3,10 @@ import {
   NameFilter,
   SpecialityFilter,
   GenderFilter,
-  ClinicFilter
+  ClinicFilter,
 } from "..";
 
-export function SearchFilters() {
+export const SearchFilters = () => {
   return (
     <section className="fixed top-0 left-0 w-full max-w-4xl mt-16 mx-auto self-stretch px-6 py-3 inline-flex flex-col justify-start items-start gap-4">
       <SearchFiltersHeader />
@@ -24,4 +24,4 @@ export function SearchFilters() {
       </div>
     </section>
   );
-}
+};

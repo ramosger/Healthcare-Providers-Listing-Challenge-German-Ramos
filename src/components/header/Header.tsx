@@ -1,7 +1,7 @@
 import { ProfileMenu } from "..";
 import { Logo } from "../../assets/icons";
 
-export function Header() {
+export const Header = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 border-b border-gray-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 lg:py-4 flex items-center justify-between gap-3">
@@ -9,14 +9,10 @@ export function Header() {
           <Logo />
 
           <div>
-            <h2
-              className="font-semibold text-lg lg:text-2xl leading-tight text-(--text-default)"
-            >
+            <h2 className="font-semibold text-lg lg:text-2xl leading-tight text-(--text-default)">
               HealthConnect
             </h2>
-            <p
-              className="font-light text-xs lg:text-sm leading-tight text-(--text-tertiary)"
-            >
+            <p className="font-light text-xs lg:text-sm leading-tight text-(--text-tertiary)">
               Find your healthcare provider
             </p>
           </div>
@@ -31,4 +27,4 @@ export function Header() {
       </div>
     </header>
   );
-}
+};
