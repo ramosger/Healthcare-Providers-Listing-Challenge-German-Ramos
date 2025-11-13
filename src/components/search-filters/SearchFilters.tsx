@@ -1,15 +1,5 @@
 import { SearchFiltersHeader, NameFilter, FilterDropdown } from "..";
-
-const SPECIALITIES = [
-  "Cardiology",
-  "Dermatology",
-  "Pediatrics",
-  "Neurology",
-  "Oncology",
-];
-
-const GENDERS = ["Male", "Female", "Other"];
-const CLINICS = ["Example Clinic", "Example Clinic 1", "Example Clinic 2"];
+import * as Constants from '../../shared';
 
 export const SearchFilters = () => {
   return (
@@ -22,16 +12,16 @@ export const SearchFilters = () => {
         <div className="self-stretch inline-flex flex-col lg:flex-row justify-center lg:justify-start items-start gap-3">
           <FilterDropdown
             placeholder="All specialities"
-            options={SPECIALITIES}
+            options={Constants.SPECIALITIES}
           />
 
-          <FilterDropdown placeholder="All genders" options={GENDERS} />
+          <FilterDropdown placeholder="All genders" options={Constants.GENDERS} />
 
-          <FilterDropdown placeholder="All clinics" options={CLINICS} />
+          <FilterDropdown placeholder="All clinics" options={Constants.CLINICS} />
         </div>
       </div>
 
-      <p className="self-stretch justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">6 providers found</p>
+      <p className="self-stretch justify-start text-text-tertiary text-base font-medium font-default leading-6">6 providers found</p>
     </section>
   );
 };

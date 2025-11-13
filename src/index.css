@@ -2,15 +2,13 @@
 
 @import "tailwindcss";
 
-:root {
-  font-family: 'DM Sans', sans-serif;
-  --text-default: #1C202E;
-  --text-tertiary: #5A5F70;
-  --text-on-brand: #F5F5F5;
-  --text-disabled-default: #757A88;
-  --text-neutral: #F1F5F9;
-  --background-default: #2E364C;
-  --background-default-default: #FAFAFB;
-  --background-utilities-scrim: #FFFFFF · 80%;
-  --border-default: #D1D2D9;
+@theme {
+  --font-default: 'DM Sans', sans-serif;
+  --color-text-default: #1C202E;
+  --color-text-tertiary: #5A5F70;
+  --color-text-on-brand: #F5F5F5;
+  --color-text-disabled-default: #757A88;
+  --color-background-default: #2E364C;
+  --color-background-default-default: #FAFAFB;
+  --color-border-default: #D1D2D9;
 }
