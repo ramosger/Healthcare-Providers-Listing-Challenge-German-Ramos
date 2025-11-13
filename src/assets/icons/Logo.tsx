@@ -4,7 +4,7 @@ export default function Logo() {
       viewBox="0 0 39 39"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-9 w-9 lg:h-11 lg:w-11 shrink-0"
+      className="size-9 lg:size-11 shrink-0"
     >
       <rect width="38.0265" height="38.0525" rx="9.19409" fill="#2E364C" />
       <path
