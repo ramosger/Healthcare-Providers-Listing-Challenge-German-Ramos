@@ -1,10 +1,15 @@
-import {
-  SearchFiltersHeader,
-  NameFilter,
-  SpecialityFilter,
-  GenderFilter,
-  ClinicFilter,
-} from "..";
+import { SearchFiltersHeader, NameFilter, FilterDropdown } from "..";
+
+const SPECIALITIES = [
+  "Cardiology",
+  "Dermatology",
+  "Pediatrics",
+  "Neurology",
+  "Oncology",
+];
+
+const GENDERS = ["Male", "Female", "Other"];
+const CLINICS = ["Example Clinic", "Example Clinic 1", "Example Clinic 2"];
 
 export const SearchFilters = () => {
   return (
@@ -15,11 +20,14 @@ export const SearchFilters = () => {
         <NameFilter />
 
         <div className="self-stretch inline-flex flex-col justify-center items-start gap-3">
-          <SpecialityFilter />
+          <FilterDropdown
+            placeholder="All specialities"
+            options={SPECIALITIES}
+          />
 
-          <GenderFilter />
+          <FilterDropdown placeholder="All genders" options={GENDERS} />
 
-          <ClinicFilter />
+          <FilterDropdown placeholder="All clinics" options={CLINICS} />
         </div>
       </div>
     </section>

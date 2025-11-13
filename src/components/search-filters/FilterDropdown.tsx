@@ -1,17 +1,25 @@
 import { useState } from "react";
 import { ChevronDown } from "../../assets/icons";
 
-export const SpecialityFilter = () => {
-  const [isSelected, setIsSelected] = useState("All specialities");
+type FilterDropdownProps = {
+  placeholder: string;
+  options: string[];
+  onChange?: (value: string) => void;
+};
+
+export const FilterDropdown = ({
+  placeholder,
+  options,
+  onChange,
+}: FilterDropdownProps) => {
+  const [selected, setSelected] = useState<string>(placeholder);
   const [isOpen, setIsOpen] = useState(false);
 
-  const specialities = [
-    "Cardiology",
-    "Dermatology",
-    "Pediatrics",
-    "Neurology",
-    "Oncology",
-  ];
+  const handleSelect = (value: string) => {
+    setSelected(value);
+    setIsOpen(false);
+    onChange?.(value);
+  };
 
   return (
     <div className="self-stretch relative flex flex-col justify-start items-start">
@@ -22,7 +30,7 @@ export const SpecialityFilter = () => {
         <div className="flex-1 flex justify-start items-center overflow-hidden">
           <div className="flex-1 self-stretch px-3 py-1.5 flex justify-between items-center">
             <span className="flex-1 justify-start text-(--text-default) text-sm font-normal font-[DM_Sans] leading-5 line-clamp-1">
-              {isSelected}
+              {selected}
             </span>
           </div>
 
@@ -37,26 +45,20 @@ export const SpecialityFilter = () => {
       {isOpen && (
         <div className="absolute top-12 left-0 w-full bg-(--background-default-default) border border-(--border-default) rounded-md shadow-md z-20">
           <button
-            className="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm"
-            onClick={() => {
-              setIsSelected("All specialities");
-              setIsOpen(false);
-            }}
+            className="w-full text-left px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+            onClick={() => handleSelect(placeholder)}
           >
-            All specialities
+            {placeholder}
           </button>
 
-          {specialities.map((speciality) => (
-            <div
-              key={speciality}
-              className="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm"
-              onClick={() => {
-                setIsSelected(speciality);
-                setIsOpen(false);
-              }}
+          {options.map((option) => (
+            <button
+              key={option}
+              className="w-full text-left px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+              onClick={() => handleSelect(option)}
             >
-              {speciality}
-            </div>
+              {option}
+            </button>
           ))}
         </div>
       )}
