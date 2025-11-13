@@ -3,7 +3,7 @@ import { Logo } from "../../assets/icons";
 
 export const Header = () => {
   return (
-    <header className="fixed top-0 left-0 w-96 lg:w-full p-6 lg:px-44 lg:py-6 bg-white border-b border-border-default inline-flex justify-between items-center z-50">
+    <header className="fixed top-0 left-0 w-full p-6 lg:px-44 lg:py-6 bg-white border-b border-border-default inline-flex justify-between items-center z-50">
       <div className="w-60 lg:w-72 h-10 lg:h-11 relative">
         <div className="size-10 lg:size-11 p-2 lg:p-2.5 left-0 top-0 absolute rounded-lg lg:rounded-xl inline-flex justify-start items-center gap-2 lg:gap-2.5">
           <div className="flex justify-start items-center gap-2">
