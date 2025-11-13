@@ -2,8 +2,8 @@ import { Search } from "../../assets/icons";
 
 export const NameFilter = () => {
   return (
-    <div className="self-stretch flex flex-col justify-start items-start gap-2.5">
-      <div className="self-stretch inline-flex flex-col justify-start items-start">
+    <div className="self-stretch inline-flex flex-col justify-start items-start gap-2.5">
+      <div className="self-stretch flex flex-col justify-start items-start">
         <div className="self-stretch flex flex-col justify-start items-start gap-2">
           <div className="self-stretch h-10 bg-(--background-default-default) rounded-md outline-1 -outline-offset-1 outline-(--border-default) inline-flex justify-start items-center overflow-hidden">
             <div className="flex-1 flex justify-start items-center overflow-hidden">
