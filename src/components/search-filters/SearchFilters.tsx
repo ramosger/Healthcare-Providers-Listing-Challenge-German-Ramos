@@ -30,6 +30,8 @@ export const SearchFilters = () => {
           <FilterDropdown placeholder="All clinics" options={CLINICS} />
         </div>
       </div>
+
+      <p className="self-stretch justify-start text-(--text-tertiary) text-base font-medium font-[DM_Sans] leading-6">6 providers found</p>
     </section>
   );
 };
