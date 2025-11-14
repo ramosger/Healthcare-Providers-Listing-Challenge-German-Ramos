@@ -39,8 +39,10 @@ export const ProviderDetailsModal = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
 
-      <div className="relative z-50 bg-background-surface rounded-2xl w-[90%] max-w-lg max-h-[624px] p-6 shadow-xl border border-border-default flex flex-col">
-        <Close onClose={onClose} />
+      <div className="relative z-50 bg-background-surface rounded-2xl w-[90%] lg:w-full max-w-lg lg:max-w-xl max-h-[624px] lg:max-h-[546px] p-6 shadow-xl border border-border-default flex flex-col">
+        <div className="cursor-pointer">
+          <Close onClose={onClose} />
+        </div>
 
         <div className="flex items-center gap-4 pb-4">
           <img
@@ -63,7 +65,7 @@ export const ProviderDetailsModal = ({
           <div className="flex bg-background-default rounded-full p-1">
             <button
               onClick={() => setTab("overview")}
-              className={`flex-1 py-2 font-default font-sm font-light rounded-full inline-flex items-center justify-center gap-2 transition ${
+              className={`flex-1 cursor-pointer py-2 font-default font-sm font-light rounded-full inline-flex items-center justify-center gap-2 transition ${
                 tab === "overview"
                   ? "bg-background-brand text-white"
                   : "bg-background-tertiary text-text-primary"
@@ -75,7 +77,7 @@ export const ProviderDetailsModal = ({
 
             <button
               onClick={() => setTab("locations")}
-              className={`flex-1 py-2 rounded-full font-default font-sm font-light inline-flex items-center justify-center gap-2 transition ${
+              className={`flex-1 cursor-pointer py-2 rounded-full font-default font-sm font-light inline-flex items-center justify-center gap-2 transition ${
                 tab === "locations"
                   ? "bg-background-brand text-white"
                   : "bg-background-tertiary text-text-primary"
@@ -159,7 +161,7 @@ export const ProviderDetailsModal = ({
 
                 <button
                   type="button"
-                  className="w-full border border-border-default rounded-lg py-2.5 inline-flex items-center justify-center gap-2 text-text-primary font-default font-medium"
+                  className="w-full cursor-pointer border border-border-default rounded-lg py-2.5 inline-flex items-center justify-center gap-2 text-text-primary font-default font-medium"
                 >
                   <LocationPin />
                   View on Google Maps
@@ -179,7 +181,7 @@ export const ProviderDetailsModal = ({
 
                 <button
                   type="button"
-                  className="w-full border border-border-default rounded-lg py-2.5 inline-flex items-center justify-center gap-2 text-text-primary font-default font-medium"
+                  className="w-full cursor-pointer border border-border-default rounded-lg py-2.5 inline-flex items-center justify-center gap-2 text-text-primary font-default font-medium"
                 >
                   <LocationPin />
                   View on Google Maps
