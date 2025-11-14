@@ -3,7 +3,7 @@ import * as Constants from '../../shared';
 
 export const SearchFilters = () => {
   return (
-    <section className="w-full mt-22 lg:mt-26 self-stretch px-6 lg:px-44 lg:pt-6 lg:pb-3 py-3 inline-flex flex-col justify-start items-start gap-4 lg:gap-7">
+    <section className="w-full mt-22 self-stretch px-6 lg:px-44 lg:pt-6 lg:pb-3 py-3 inline-flex flex-col justify-start items-start gap-4 lg:gap-7">
       <SearchFiltersHeader />
 
       <div className="self-stretch inline-flex flex-col justify-start items-start gap-5">

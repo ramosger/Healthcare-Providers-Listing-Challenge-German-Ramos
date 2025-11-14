@@ -1,6 +1,6 @@
 export const SearchFiltersHeader = () => {
   return (
-    <div className="inline-flex flex-col justify-start items-start gap-1 lg:gap-2 lg:w-[510px]">
+    <div className="inline-flex flex-col justify-start items-start gap-1 lg:gap-2 lg:w-full">
       <h1 className="w-80 lg:self-stretch justify-center text-text-primary text-2xl lg:text-3xl font-semibold font-default">
         Healthcare Providers
       </h1>
