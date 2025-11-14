@@ -12,10 +12,10 @@ export const Header = () => {
         </div>
 
         <div className="w-48 lg:w-56 h-9 lg:h-10 left-[49.96px] lg:left-[60.14px] top-[1.60px] lg:top-[1.92px] absolute inline-flex flex-col justify-start items-start gap-2 lg:gap-2.5">
-          <h2 className="w-36 lg:w-40 h-3.5 lg:h-4 font-semibold text-lg lg:text-2xl leading-tight text-text-default">
+          <h2 className="w-36 lg:w-40 h-3.5 lg:h-4 font-semibold text-lg lg:text-2xl leading-tight text-text-primary">
             HealthConnect
           </h2>
-          <p className="font-light w-44 lg:w-52 h-3 lg:h-3.5 text-xs lg:text-sm leading-tight text-text-tertiary">
+          <p className="font-light w-44 lg:w-52 h-3 lg:h-3.5 text-xs lg:text-sm leading-tight text-text-secondary">
             Find your healthcare provider
           </p>
         </div>
