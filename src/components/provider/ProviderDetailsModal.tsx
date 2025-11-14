@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Close, User, LocationPin, Phone, Mail, World } from "../../assets/icons";
+import {
+  Close,
+  User,
+  LocationPin,
+  Phone,
+  Mail,
+  World,
+} from "../../assets/icons";
 
 type ProviderDetailsModalProps = {
   isOpen: boolean;
@@ -32,7 +39,7 @@ export const ProviderDetailsModal = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
 
-      <div className="relative z-50 bg-background-surface rounded-2xl w-[90%] max-w-lg p-6 shadow-xl border border-border-default max-h-[80%]">
+      <div className="relative z-50 bg-background-surface rounded-2xl w-[90%] max-w-lg p-6 shadow-xl border border-border-default max-h-[624px] overflow-hidden">
         <Close onClose={onClose} />
 
         <div className="flex items-center gap-4 mb-6">
@@ -83,8 +90,12 @@ export const ProviderDetailsModal = ({
         {tab === "overview" && (
           <div className="pt-6 space-y-3">
             <div>
-              <h3 className="text-lg font-medium font-default text-text-primary">About</h3>
-              <p className="text-text-default-secondary font-default font-light pt-2">{about}</p>
+              <h3 className="text-lg font-medium font-default text-text-primary">
+                About
+              </h3>
+              <p className="text-text-default-secondary font-default font-light pt-2">
+                {about}
+              </p>
             </div>
 
             <hr className="border-border-default" />
@@ -97,12 +108,16 @@ export const ProviderDetailsModal = ({
               <div className="pt-1 flex flex-col gap-1">
                 <div className="inline-flex items-center gap-2">
                   <Phone />
-                  <p className="text-text-default-secondary font-default font-light">{phone}</p>
+                  <p className="text-text-default-secondary font-default font-light">
+                    {phone}
+                  </p>
                 </div>
 
                 <div className="pt-1 inline-flex items-center gap-2">
                   <Mail />
-                  <p className="text-text-default-secondary font-default font-light">{email}</p>
+                  <p className="text-text-default-secondary font-default font-light">
+                    {email}
+                  </p>
                 </div>
               </div>
             </div>
