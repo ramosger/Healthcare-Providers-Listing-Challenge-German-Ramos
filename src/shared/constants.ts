@@ -24,6 +24,11 @@ export const PROVIDERS: Provider[] = [
     speciality: "Cardiology",
     primaryLocation: "Metropolitan Medical Center",
     extraLocationsLabel: "+ 1 more location",
+    about:
+      "Dr. Johnson is a board-certified cardiologist with over 12 years of experience in heart health, preventive cardiology, and interventional procedures.",
+    phone: "(555) 123-4567",
+    email: "sarah.johnson@example.com",
+    languages: ["English", "Spanish"],
   },
   {
     id: "2",
@@ -32,6 +37,11 @@ export const PROVIDERS: Provider[] = [
     speciality: "Neurology",
     primaryLocation: "City Hospital",
     extraLocationsLabel: "+ 2 more location",
+    about:
+      "Dr. Lee specializes in complex neurological disorders, stroke care, and neurodegenerative disease management.",
+    phone: "(555) 222-8899",
+    email: "michael.lee@example.com",
+    languages: ["English", "Korean"],
   },
   {
     id: "3",
@@ -40,6 +50,11 @@ export const PROVIDERS: Provider[] = [
     speciality: "Pediatrics",
     primaryLocation: "Metropolitan Children's Hospital",
     extraLocationsLabel: "+ 3 more location",
+    about:
+      "Dr. Carter is an experienced pediatrician committed to providing warm and attentive care for infants, children, and adolescents.",
+    phone: "(555) 987-1234",
+    email: "emily.carter@example.com",
+    languages: ["English"],
   },
   {
     id: "4",
@@ -48,6 +63,11 @@ export const PROVIDERS: Provider[] = [
     speciality: "Pediatrics",
     primaryLocation: "City Children's Hospital",
     extraLocationsLabel: "+ 2 more location",
+    about:
+      "Dr. McAddams has over 15 years of experience in childhood development, preventive medicine, and adolescent care.",
+    phone: "(555) 444-9034",
+    email: "emily.mcaddams@example.com",
+    languages: ["English", "French"],
   },
   {
     id: "5",
@@ -56,6 +76,11 @@ export const PROVIDERS: Provider[] = [
     speciality: "Dermatology",
     primaryLocation: "Harborview Skin Clinic",
     extraLocationsLabel: "+ 1 more location",
+    about:
+      "Dr. Smith specializes in dermatologic surgery, acne treatment, and chronic skin conditions management.",
+    phone: "(555) 721-4432",
+    email: "michael.smith@example.com",
+    languages: ["English"],
   },
   {
     id: "6",
@@ -64,5 +89,10 @@ export const PROVIDERS: Provider[] = [
     speciality: "Neurology",
     primaryLocation: "Westside Brain Institute",
     extraLocationsLabel: "+ 3 more location",
+    about:
+      "Dr. Patel focuses on epilepsy, neuroimaging, and neurological rehabilitation, combining research with clinical practice.",
+    phone: "(555) 882-1902",
+    email: "lisa.patel@example.com",
+    languages: ["English", "Hindi"],
   },
 ];

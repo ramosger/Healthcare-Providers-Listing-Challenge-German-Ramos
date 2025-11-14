@@ -5,4 +5,8 @@ export type Provider = {
   speciality: string;
   primaryLocation: string;
   extraLocationsLabel: string;
+  about: string;
+  phone: string;
+  email: string;
+  languages: string[];
 };

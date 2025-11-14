@@ -1,2 +1,3 @@
 export * from "./ProvidersListing";
-export * from "./PatientCard"
+export * from "./ProviderCard";
+export * from "./ProviderDetailsModal"

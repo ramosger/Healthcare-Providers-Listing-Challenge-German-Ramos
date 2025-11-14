@@ -1,6 +1,6 @@
 import { Location } from "../../assets/icons";
 
-type PatientCardProps = {
+type ProviderCardProps = {
   imageSrc: string;
   name: string;
   speciality: string;
@@ -9,14 +9,14 @@ type PatientCardProps = {
   onViewDetails?: () => void;
 };
 
-export const PatientCard = ({
+export const ProviderCard = ({
   imageSrc,
   name,
   speciality,
   primaryLocation,
   extraLocationsLabel,
   onViewDetails,
-}: PatientCardProps) => {
+}: ProviderCardProps) => {
   return (
     <div className="self-stretch bg-background-surface rounded-xl outline-1 outline-border-default flex flex-col overflow-hidden">
       <img className="w-full h-56 object-cover" src={imageSrc} alt={name} />
