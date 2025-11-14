@@ -3,3 +3,9 @@ export * from "./Search";
 export * from "./ChevronDown";
 export * from "./Logout"
 export * from "./Location"
+export * from "./Close"
+export * from "./User"
+export * from "./LocationPin"
+export * from "./Phone"
+export * from "./Mail"
+export * from "./World"
