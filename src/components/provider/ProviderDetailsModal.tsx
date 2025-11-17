@@ -8,6 +8,7 @@ import {
   World,
 } from "../../assets/icons";
 import type { Provider } from "../../domain";
+import { ProviderLocations } from "./ProviderLocations";
 
 type ProviderDetailsModalProps = {
   isOpen: boolean;
@@ -134,51 +135,7 @@ export const ProviderDetailsModal = ({
           )}
 
           {tab === "locations" && (
-            <div className="pt-6 space-y-3">
-              <h3 className="text-lg font-medium font-default text-text-primary">
-                Locations
-              </h3>
-
-              <div className="border border-border-default rounded-xl p-5 space-y-2">
-                <h4 className="text-md font-medium font-default text-text-primary">
-                  Metropolitan Medical Center
-                </h4>
-
-                <div className="text-text-secondary font-default font-light space-y-1 leading-6">
-                  <p>123 Health St</p>
-                  <p>New York, NY 10001</p>
-                  <p>(555) 123–4567</p>
-                </div>
-
-                <button
-                  type="button"
-                  className="w-full cursor-pointer border border-border-default rounded-lg py-2.5 inline-flex items-center justify-center gap-2 text-text-primary font-default font-medium"
-                >
-                  <LocationPin />
-                  View on Google Maps
-                </button>
-              </div>
-
-              <div className="border border-border-default rounded-xl p-5 space-y-3">
-                <h4 className="text-lg font-medium font-default text-text-primary">
-                  Green Valley Clinic
-                </h4>
-
-                <div className="text-text-secondary font-default font-light space-y-1 leading-6">
-                  <p>456 Wellness Blvd</p>
-                  <p>Los Angeles, CA 90001</p>
-                  <p>(555) 234–5678</p>
-                </div>
-
-                <button
-                  type="button"
-                  className="w-full cursor-pointer border border-border-default rounded-lg py-2.5 inline-flex items-center justify-center gap-2 text-text-primary font-default font-medium"
-                >
-                  <LocationPin />
-                  View on Google Maps
-                </button>
-              </div>
-            </div>
+            <ProviderLocations locations={provider.locations} />
           )}
         </div>
       </div>

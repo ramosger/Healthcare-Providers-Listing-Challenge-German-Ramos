@@ -1,3 +1,5 @@
+import type { ProviderLocation } from "./ProviderLocation";
+
 export type Provider = {
   id: string;
   imageSrc: string;
@@ -9,4 +11,5 @@ export type Provider = {
   phone: string;
   email: string;
   languages: string[];
+  locations: ProviderLocation[];
 };
