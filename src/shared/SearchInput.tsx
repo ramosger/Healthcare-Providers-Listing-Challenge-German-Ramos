@@ -1,4 +1,4 @@
-import { Search } from "../assets/icons";
+import { SearchIcon } from "../assets/icons";
 
 type SearchInputProps = {
   placeholder?: string;
@@ -15,7 +15,7 @@ export const SearchInput = ({
     <div className="self-stretch h-10 bg-background-surface rounded-md outline-1 -outline-offset-1 outline-border-default inline-flex justify-start items-center overflow-hidden">
       <div className="flex-1 flex justify-start items-center overflow-hidden">
         <div className="self-stretch pl-3 flex justify-start items-center gap-2">
-          <Search />
+          <SearchIcon />
         </div>
 
         <div className="font-light flex-1 self-stretch px-3 py-1.5 flex justify-between items-center">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown } from "../../assets/icons";
+import { ChevronDownIcon } from "../../assets/icons";
 
 type FilterDropdownProps = {
   placeholder: string;
@@ -37,7 +37,7 @@ export const FilterDropdown = ({
 
             <div className="self-stretch pr-3 flex justify-start items-center gap-2">
               <div className="size-4 relative">
-                <ChevronDown />
+                <ChevronDownIcon />
               </div>
             </div>
           </div>

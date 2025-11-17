@@ -1,4 +1,4 @@
-import { LocationPin } from "../../assets/icons";
+import { LocationPinIcon } from "../../assets/icons";
 import type { ProviderLocation } from "../../domain";
 
 type ProviderLocationsProps = {
@@ -40,7 +40,7 @@ export const ProviderLocations = ({
               rel="noreferrer"
               className="w-full cursor-pointer border border-border-default rounded-lg py-2.5 inline-flex items-center justify-center gap-2 text-text-primary font-default font-medium"
             >
-              <LocationPin />
+              <LocationPinIcon />
               View on Google Maps
             </a>
           )}

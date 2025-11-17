@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Logout } from "../../assets/icons";
+import { LogoutIcon } from "../../assets/icons";
 
 type ProfileMenuProps = {
   name: string;
@@ -60,7 +60,7 @@ export const ProfileMenu = ({
               onLogout?.();
             }}
           >
-            <Logout />
+            <LogoutIcon />
 
             <p className="self-stretch justify-start text-sm font-normal font-default leading-5 line-clamp-1 text-text-primary">
               Log out

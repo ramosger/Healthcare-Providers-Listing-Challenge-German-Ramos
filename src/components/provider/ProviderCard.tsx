@@ -1,4 +1,4 @@
-import { Location } from "../../assets/icons";
+import { LocationIcon } from "../../assets/icons";
 import type { Provider } from "../../domain";
 
 type ProviderCardProps = {
@@ -29,7 +29,7 @@ export const ProviderCard = ({
 
           <div className="flex flex-col gap-3">
             <div className="inline-flex items-center gap-1">
-              <Location />
+              <LocationIcon />
               <span className="text-text-secondary text-base font-medium leading-6">
                 {primaryLocation}
               </span>

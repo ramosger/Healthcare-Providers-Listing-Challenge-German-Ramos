@@ -1,5 +1,5 @@
 import { ProfileMenu } from "..";
-import { Logo } from "../../assets/icons";
+import { LogoIcon } from "../../assets/icons";
 
 export const Header = () => {
   return (
@@ -7,7 +7,7 @@ export const Header = () => {
       <div className="w-60 lg:w-72 h-10 lg:h-11 relative">
         <div className="size-10 lg:size-11 p-2 lg:p-2.5 left-0 top-0 absolute rounded-lg lg:rounded-xl inline-flex justify-start items-center gap-2 lg:gap-2.5">
           <div className="flex justify-start items-center gap-2">
-            <Logo />
+            <LogoIcon />
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import { Phone, Mail, World } from "../../assets/icons";
+import { PhoneIcon, MailIcon, WorldIcon } from "../../assets/icons";
 
 type ProviderOverviewProps = {
   about: string;
@@ -33,14 +33,14 @@ export const ProviderOverview = ({
 
         <div className="pt-1 flex flex-col gap-1">
           <div className="inline-flex items-center gap-2">
-            <Phone />
+            <PhoneIcon />
             <p className="text-text-default-secondary font-default font-light">
               {phone}
             </p>
           </div>
 
           <div className="pt-1 inline-flex items-center gap-2">
-            <Mail />
+            <MailIcon />
             <p className="text-text-default-secondary font-default font-light">
               {email}
             </p>
@@ -56,7 +56,7 @@ export const ProviderOverview = ({
         </h3>
 
         <div className="inline-flex items-center gap-2 mt-2">
-          <World />
+          <WorldIcon />
           <p className="text-text-default-secondary font-default font-light">
             {languages.join(", ")}
           </p>

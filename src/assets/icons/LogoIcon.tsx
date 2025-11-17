@@ -1,4 +1,4 @@
-export const Logo = () => {
+export const LogoIcon = () => {
   return (
     <svg
       viewBox="0 0 39 39"
