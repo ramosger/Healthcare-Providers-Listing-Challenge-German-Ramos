@@ -3,7 +3,7 @@ import { CloseIcon, UserIcon, LocationPinIcon } from "../../assets/icons";
 import type { Provider } from "../../domain";
 import { ProviderLocations } from "./ProviderLocations";
 import { ProviderOverview } from "./ProviderOverview";
-import type { DetailTab } from "../../shared";
+import { DETAIL_TABS, type DetailTab } from "../../shared";
 
 type ProviderDetailsModalProps = {
   isOpen: boolean;
@@ -16,7 +16,7 @@ export const ProviderDetailsModal = ({
   onClose,
   provider,
 }: ProviderDetailsModalProps) => {
-  const [tab, setTab] = useState<DetailTab>("overview");
+  const [tab, setTab] = useState<DetailTab>(DETAIL_TABS.OVERVIEW);
 
   const { imageSrc, name, speciality, about, phone, email, languages } =
     provider;
@@ -40,9 +40,7 @@ export const ProviderDetailsModal = ({
           />
 
           <div>
-            <h2 className="text-2xl font-semibold text-text-primary">
-              {name}
-            </h2>
+            <h2 className="text-2xl font-semibold text-text-primary">{name}</h2>
             <p className="text-xl text-text-secondary font-medium">
               {speciality}
             </p>
@@ -52,9 +50,9 @@ export const ProviderDetailsModal = ({
         <div className="bg-background-tertiary rounded-full">
           <div className="flex bg-background-default rounded-full p-1">
             <button
-              onClick={() => setTab("overview")}
+              onClick={() => setTab(DETAIL_TABS.OVERVIEW)}
               className={`flex-1 cursor-pointer py-2 text-sm font-light rounded-full inline-flex items-center justify-center gap-2 transition ${
-                tab === "overview"
+                tab === DETAIL_TABS.OVERVIEW
                   ? "bg-background-brand text-white"
                   : "bg-background-tertiary text-text-primary"
               }`}
@@ -64,9 +62,9 @@ export const ProviderDetailsModal = ({
             </button>
 
             <button
-              onClick={() => setTab("locations")}
+              onClick={() => setTab(DETAIL_TABS.LOCATIONS)}
               className={`flex-1 cursor-pointer py-2 rounded-full text-sm font-light inline-flex items-center justify-center gap-2 transition ${
-                tab === "locations"
+                tab === DETAIL_TABS.LOCATIONS
                   ? "bg-background-brand text-white"
                   : "bg-background-tertiary text-text-primary"
               }`}
@@ -78,7 +76,7 @@ export const ProviderDetailsModal = ({
         </div>
 
         <div className="flex-1 overflow-y-auto pr-1">
-          {tab === "overview" && (
+          {tab === DETAIL_TABS.OVERVIEW && (
             <ProviderOverview
               about={about}
               phone={phone}
@@ -87,7 +85,7 @@ export const ProviderDetailsModal = ({
             />
           )}
 
-          {tab === "locations" && (
+          {tab === DETAIL_TABS.LOCATIONS && (
             <ProviderLocations locations={provider.locations} />
           )}
         </div>

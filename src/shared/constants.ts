@@ -241,5 +241,9 @@ export const PROVIDERS: Provider[] = [
   },
 ];
 
-export const DETAIL_TABS = ["overview", "locations"] as const;
-export type DetailTab = (typeof DETAIL_TABS)[number];
+export const DETAIL_TABS = {
+  OVERVIEW: "overview",
+  LOCATIONS: "locations",
+} as const;
+
+export type DetailTab = (typeof DETAIL_TABS)[keyof typeof DETAIL_TABS];
