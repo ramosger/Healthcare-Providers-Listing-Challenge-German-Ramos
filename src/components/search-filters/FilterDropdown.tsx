@@ -30,7 +30,7 @@ export const FilterDropdown = ({
         >
           <div className="flex-1 flex justify-start items-center overflow-hidden">
             <div className="flex-1 self-stretch px-3 py-1.5 flex justify-between items-center">
-              <span className="flex-1 justify-start text-text-primary text-sm font-normal font-default leading-5 line-clamp-1">
+              <span className="flex-1 justify-start text-text-primary text-sm font-normal leading-5 line-clamp-1">
                 {selected}
               </span>
             </div>

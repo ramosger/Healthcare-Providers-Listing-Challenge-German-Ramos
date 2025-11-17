@@ -9,7 +9,7 @@ export const ProviderContactRow = ({ icon, text }: ProviderContactRowProps) => {
   return (
     <div className="inline-flex items-center gap-2">
       {icon}
-      <p className="text-text-default-secondary font-default font-light">
+      <p className="text-text-default-secondary font-light">
         {text}
       </p>
     </div>

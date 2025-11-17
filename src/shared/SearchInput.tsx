@@ -24,7 +24,7 @@ export const SearchInput = ({
             placeholder={placeholder}
             value={value}
             onChange={(e) => onChange?.(e.target.value)}
-            className="placeholder-text-disabled flex-1 justify-start text-text-disabled text-sm font-normal font-default leading-5 line-clamp-1 bg-transparent outline-none"
+            className="placeholder-text-disabled flex-1 justify-start text-text-disabled text-sm font-normal leading-5 line-clamp-1 bg-transparent outline-none"
             aria-label={placeholder}
           />
         </div>

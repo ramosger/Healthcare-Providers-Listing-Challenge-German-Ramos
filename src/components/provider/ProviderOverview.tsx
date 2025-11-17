@@ -18,7 +18,7 @@ export const ProviderOverview = ({
   return (
     <div className="pt-6 space-y-4">
       <ProviderOverviewSection title="About">
-        <p className="text-text-default-secondary font-default font-light">
+        <p className="text-text-default-secondary font-light">
           {about}
         </p>
       </ProviderOverviewSection>
@@ -33,7 +33,7 @@ export const ProviderOverview = ({
       <ProviderOverviewSection title="Languages" withDivider={false}>
         <div className="inline-flex items-center gap-2 pt-2">
           <WorldIcon />
-          <p className="text-text-default-secondary font-default font-light">
+          <p className="text-text-default-secondary font-light">
             {languages.join(", ")}
           </p>
         </div>

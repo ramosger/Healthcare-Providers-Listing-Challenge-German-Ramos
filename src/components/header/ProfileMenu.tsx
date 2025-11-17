@@ -44,10 +44,10 @@ export const ProfileMenu = ({
           className="absolute right-0 mt-2 w-56 p-2 rounded-md shadow-[0px_1px_4px_0px_rgba(14,16,23,0.10)] outline-1 -outline-offset-1 outline-border-default inline-flex flex-col justify-start items-start bg-background-surface"
         >
           <div className="self-stretch p-2 border-b inline-flex flex-col justify-start items-start gap-2.5 border-border-default)">
-            <p className="self-stretch justify-start text-sm font-medium font-default leading-5 text-text-primary">
+            <p className="self-stretch justify-start text-sm font-medium leading-5 text-text-primary">
               {name}
             </p>
-            <p className="self-stretch justify-start text-xs font-normal font-default leading-4 text-text-secondary">
+            <p className="self-stretch justify-start text-xs font-normal leading-4 text-text-secondary">
               {email}
             </p>
           </div>
@@ -62,7 +62,7 @@ export const ProfileMenu = ({
           >
             <LogoutIcon />
 
-            <p className="self-stretch justify-start text-sm font-normal font-default leading-5 line-clamp-1 text-text-primary">
+            <p className="self-stretch justify-start text-sm font-normal leading-5 line-clamp-1 text-text-primary">
               Log out
             </p>
           </button>

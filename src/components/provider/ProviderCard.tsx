@@ -19,10 +19,10 @@ export const ProviderCard = ({
       <div className="p-5 flex flex-col flex-1 justify-between gap-3">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-2">
-            <h2 className="text-text-primary text-2xl font-semibold font-default">
+            <h2 className="text-text-primary text-2xl font-semibold">
               {name}
             </h2>
-            <p className="text-text-secondary text-xl font-medium font-default">
+            <p className="text-text-secondary text-xl font-medium">
               {speciality}
             </p>
           </div>
@@ -48,7 +48,7 @@ export const ProviderCard = ({
         <button
           type="button"
           onClick={onViewDetails}
-          className="w-full py-2 bg-background-brand rounded-md text-text-neutral text-base font-medium font-default leading-6 cursor-pointer"
+          className="w-full py-2 bg-background-brand rounded-md text-text-neutral text-base font-medium leading-6 cursor-pointer"
         >
           View details
         </button>

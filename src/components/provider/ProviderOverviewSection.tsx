@@ -13,7 +13,7 @@ export const ProviderOverviewSection = ({
 }: ProviderOverviewSectionProps) => {
   return (
     <div className="space-y-2">
-      <h3 className="text-lg font-medium font-default text-text-primary">
+      <h3 className="text-lg font-medium text-text-primary">
         {title}
       </h3>
       {children}
