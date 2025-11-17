@@ -53,7 +53,7 @@ export const ProviderDetailsModal = ({
           <div className="flex bg-background-default rounded-full p-1">
             <button
               onClick={() => setTab("overview")}
-              className={`flex-1 cursor-pointer py-2 font-sm font-light rounded-full inline-flex items-center justify-center gap-2 transition ${
+              className={`flex-1 cursor-pointer py-2 text-sm font-light rounded-full inline-flex items-center justify-center gap-2 transition ${
                 tab === "overview"
                   ? "bg-background-brand text-white"
                   : "bg-background-tertiary text-text-primary"
@@ -65,7 +65,7 @@ export const ProviderDetailsModal = ({
 
             <button
               onClick={() => setTab("locations")}
-              className={`flex-1 cursor-pointer py-2 rounded-full font-sm font-light inline-flex items-center justify-center gap-2 transition ${
+              className={`flex-1 cursor-pointer py-2 rounded-full text-sm font-light inline-flex items-center justify-center gap-2 transition ${
                 tab === "locations"
                   ? "bg-background-brand text-white"
                   : "bg-background-tertiary text-text-primary"
