@@ -1,4 +1,6 @@
 import { PhoneIcon, MailIcon, WorldIcon } from "../../assets/icons";
+import { ProviderContactRow } from "./ProviderContactRow";
+import { ProviderOverviewSection } from "./ProviderOverviewSection";
 
 type ProviderOverviewProps = {
   about: string;
@@ -14,54 +16,28 @@ export const ProviderOverview = ({
   languages,
 }: ProviderOverviewProps) => {
   return (
-    <div className="pt-6 space-y-3">
-      <div>
-        <h3 className="text-lg font-medium font-default text-text-primary">
-          About
-        </h3>
-        <p className="text-text-default-secondary font-default font-light pt-2">
+    <div className="pt-6 space-y-4">
+      <ProviderOverviewSection title="About">
+        <p className="text-text-default-secondary font-default font-light">
           {about}
         </p>
-      </div>
+      </ProviderOverviewSection>
 
-      <hr className="border-border-default" />
-
-      <div>
-        <h3 className="text-lg font-medium font-default text-text-primary">
-          Contact information
-        </h3>
-
+      <ProviderOverviewSection title="Contact information">
         <div className="pt-1 flex flex-col gap-1">
-          <div className="inline-flex items-center gap-2">
-            <PhoneIcon />
-            <p className="text-text-default-secondary font-default font-light">
-              {phone}
-            </p>
-          </div>
-
-          <div className="pt-1 inline-flex items-center gap-2">
-            <MailIcon />
-            <p className="text-text-default-secondary font-default font-light">
-              {email}
-            </p>
-          </div>
+          <ProviderContactRow icon={<PhoneIcon />} text={phone} />
+          <ProviderContactRow icon={<MailIcon />} text={email}/>
         </div>
-      </div>
+      </ProviderOverviewSection>
 
-      <hr className="border-border-default" />
-
-      <div>
-        <h3 className="text-lg font-medium font-default text-text-primary">
-          Languages
-        </h3>
-
-        <div className="inline-flex items-center gap-2 mt-2">
+      <ProviderOverviewSection title="Languages" withDivider={false}>
+        <div className="inline-flex items-center gap-2 pt-2">
           <WorldIcon />
           <p className="text-text-default-secondary font-default font-light">
             {languages.join(", ")}
           </p>
         </div>
-      </div>
+      </ProviderOverviewSection>
     </div>
   );
 };
