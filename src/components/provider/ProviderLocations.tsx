@@ -13,26 +13,26 @@ export const ProviderLocations = ({ locations }: ProviderLocationsProps) => {
       <h3 className="text-lg font-medium text-text-primary">Locations</h3>
 
       <ul className="space-y-3">
-        {locations.map((location) => (
+        {locations.map(({ id, name, street, city, state, zipCode, phone, mapsUrl }) => (
           <li
-            key={location.id}
+            key={id}
             className="border border-border-default rounded-xl p-5 space-y-3"
           >
             <h4 className="text-md font-medium text-text-primary">
-              {location.name}
+              {name}
             </h4>
 
             <div className="text-text-secondary font-light space-y-1 leading-6">
-              <p>{location.street}</p>
+              <p>{street}</p>
               <p>
-                {location.city}, {location.state} {location.zipCode}
+                {city}, {state} {zipCode}
               </p>
-              <p>{location.phone}</p>
+              <p>{phone}</p>
             </div>
 
-            {location.mapsUrl && (
+            {mapsUrl && (
               <a
-                href={location.mapsUrl}
+                href={mapsUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="w-full cursor-pointer border border-border-default rounded-lg py-2.5 inline-flex items-center justify-center gap-2 text-text-primary font-medium"
