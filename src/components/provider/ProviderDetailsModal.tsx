@@ -25,7 +25,7 @@ export const ProviderDetailsModal = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+      <button className="absolute inset-0 bg-black/50" onClick={onClose} />
 
       <div className="relative z-50 bg-background-surface rounded-2xl w-[90%] lg:w-full max-w-lg lg:max-w-xl max-h-[624px] lg:max-h-[546px] p-6 shadow-xl border border-border-default flex flex-col">
         <div className="cursor-pointer">
