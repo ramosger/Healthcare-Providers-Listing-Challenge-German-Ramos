@@ -1,14 +1,8 @@
 import { useState } from "react";
-import {
-  Close,
-  User,
-  LocationPin,
-  Phone,
-  Mail,
-  World,
-} from "../../assets/icons";
+import { Close, User, LocationPin } from "../../assets/icons";
 import type { Provider } from "../../domain";
 import { ProviderLocations } from "./ProviderLocations";
+import { ProviderOverview } from "./ProviderOverview";
 
 type ProviderDetailsModalProps = {
   isOpen: boolean;
@@ -23,7 +17,8 @@ export const ProviderDetailsModal = ({
 }: ProviderDetailsModalProps) => {
   const [tab, setTab] = useState<"overview" | "locations">("overview");
 
-  const { imageSrc, name, speciality, about, phone, email, languages } = provider;
+  const { imageSrc, name, speciality, about, phone, email, languages } =
+    provider;
 
   if (!isOpen) return null;
 
@@ -83,55 +78,12 @@ export const ProviderDetailsModal = ({
 
         <div className="flex-1 overflow-y-auto pr-1">
           {tab === "overview" && (
-            <div className="pt-6 space-y-3">
-              <div>
-                <h3 className="text-lg font-medium font-default text-text-primary">
-                  About
-                </h3>
-                <p className="text-text-default-secondary font-default font-light pt-2">
-                  {about}
-                </p>
-              </div>
-
-              <hr className="border-border-default" />
-
-              <div>
-                <h3 className="text-lg font-medium font-default text-text-primary">
-                  Contact information
-                </h3>
-
-                <div className="pt-1 flex flex-col gap-1">
-                  <div className="inline-flex items-center gap-2">
-                    <Phone />
-                    <p className="text-text-default-secondary font-default font-light">
-                      {phone}
-                    </p>
-                  </div>
-
-                  <div className="pt-1 inline-flex items-center gap-2">
-                    <Mail />
-                    <p className="text-text-default-secondary font-default font-light">
-                      {email}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <hr className="border-border-default" />
-
-              <div>
-                <h3 className="text-lg font-medium font-default text-text-primary">
-                  Languages
-                </h3>
-
-                <div className="inline-flex items-center gap-2 mt-2">
-                  <World />
-                  <p className="text-text-default-secondary font-default font-light">
-                    {languages.join(", ")}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ProviderOverview
+              about={about}
+              phone={phone}
+              email={email}
+              languages={languages}
+            />
           )}
 
           {tab === "locations" && (
