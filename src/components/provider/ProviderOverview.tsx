@@ -1,12 +1,13 @@
 import { PhoneIcon, MailIcon, WorldIcon } from "../../assets/icons";
+import type { Provider } from "../../domain";
 import { ProviderContactRow } from "./ProviderContactRow";
 import { ProviderOverviewSection } from "./ProviderOverviewSection";
 
 type ProviderOverviewProps = {
-  about: string;
-  phone: string;
-  email: string;
-  languages: string[];
+  about: Provider["about"];
+  phone: Provider["phone"];
+  email: Provider["email"];
+  languages: Provider["languages"];
 };
 
 export const ProviderOverview = ({
