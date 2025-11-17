@@ -1,22 +1,17 @@
 import { Location } from "../../assets/icons";
+import type { Provider } from "../../domain";
 
 type ProviderCardProps = {
-  imageSrc: string;
-  name: string;
-  speciality: string;
-  primaryLocation: string;
-  extraLocationsLabel?: string;
+  provider: Provider;
   onViewDetails?: () => void;
 };
 
 export const ProviderCard = ({
-  imageSrc,
-  name,
-  speciality,
-  primaryLocation,
-  extraLocationsLabel,
+  provider,
   onViewDetails,
 }: ProviderCardProps) => {
+  const { imageSrc, name, speciality, primaryLocation, extraLocationsLabel } = provider;
+
   return (
     <div className="self-stretch bg-background-surface rounded-xl outline-1 outline-border-default flex flex-col overflow-hidden">
       <img className="w-full h-56 object-cover" src={imageSrc} alt={name} />

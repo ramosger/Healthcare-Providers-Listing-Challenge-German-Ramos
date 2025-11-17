@@ -1,38 +1,40 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { ProviderCard, ProviderDetailsModal } from "..";
 import type { Provider } from "../../domain";
 import * as Constants from "../../shared";
 
 export const ProvidersListing = () => {
-  const [providerSelected, setProviderSelected] = useState<Provider>();
+  const [selectedProviderId, setSelectedProviderId] = useState<
+    Provider["id"] | null
+  >(null);
+
+  const selectedProvider = useMemo(
+    () =>
+      Constants.PROVIDERS.find(
+        (provider) => provider.id === selectedProviderId
+      ) ?? null,
+    [selectedProviderId]
+  );
 
   return (
-    <div className="self-stretch w-full px-6 lg:px-44 inline-flex flex-col justify-start items-start gap-3 lg:grid lg:grid-cols-3 lg:grid-rows-2 lg:gap-4">
-      {Constants.PROVIDERS.map((provider: Provider) => (
-        <ProviderCard
-          key={provider.id}
-          imageSrc={provider.imageSrc}
-          name={provider.name}
-          speciality={provider.speciality}
-          primaryLocation={provider.primaryLocation}
-          extraLocationsLabel={provider.extraLocationsLabel}
-          onViewDetails={() => setProviderSelected(provider)}
-        />
-      ))}
+    <>
+      <div className="w-full px-6 lg:px-44 grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-4">
+        {Constants.PROVIDERS.map((provider: Provider) => (
+          <ProviderCard
+            key={provider.id}
+            provider={provider}
+            onViewDetails={() => setSelectedProviderId(provider.id)}
+          />
+        ))}
+      </div>
 
-      {providerSelected && (
+      {selectedProvider && (
         <ProviderDetailsModal
           isOpen={true}
-          onClose={() => setProviderSelected(undefined)}
-          imageSrc={providerSelected.imageSrc}
-          name={providerSelected.name}
-          speciality={providerSelected.speciality}
-          about={providerSelected.about}
-          phone={providerSelected.phone}
-          email={providerSelected.email}
-          languages={providerSelected.languages}
+          onClose={() => setSelectedProviderId(null)}
+          provider={selectedProvider}
         />
       )}
-    </div>
+    </>
   );
 };

@@ -7,31 +7,22 @@ import {
   Mail,
   World,
 } from "../../assets/icons";
+import type { Provider } from "../../domain";
 
 type ProviderDetailsModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  imageSrc: string;
-  name: string;
-  speciality: string;
-  about: string;
-  phone: string;
-  email: string;
-  languages: string[];
+  provider: Provider;
 };
 
 export const ProviderDetailsModal = ({
   isOpen,
   onClose,
-  imageSrc,
-  name,
-  speciality,
-  about,
-  phone,
-  email,
-  languages,
+  provider,
 }: ProviderDetailsModalProps) => {
   const [tab, setTab] = useState<"overview" | "locations">("overview");
+
+  const { imageSrc, name, speciality, about, phone, email, languages } = provider;
 
   if (!isOpen) return null;
 
