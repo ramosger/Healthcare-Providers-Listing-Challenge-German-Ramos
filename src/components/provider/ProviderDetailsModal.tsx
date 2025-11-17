@@ -3,6 +3,7 @@ import { CloseIcon, UserIcon, LocationPinIcon } from "../../assets/icons";
 import type { Provider } from "../../domain";
 import { ProviderLocations } from "./ProviderLocations";
 import { ProviderOverview } from "./ProviderOverview";
+import type { DetailTab } from "../../shared";
 
 type ProviderDetailsModalProps = {
   isOpen: boolean;
@@ -15,7 +16,7 @@ export const ProviderDetailsModal = ({
   onClose,
   provider,
 }: ProviderDetailsModalProps) => {
-  const [tab, setTab] = useState<"overview" | "locations">("overview");
+  const [tab, setTab] = useState<DetailTab>("overview");
 
   const { imageSrc, name, speciality, about, phone, email, languages } =
     provider;
