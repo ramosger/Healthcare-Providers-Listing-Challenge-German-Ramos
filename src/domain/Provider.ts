@@ -1,4 +1,4 @@
-import type { ProviderClinics } from "./ProviderClinics";
+import type { Clinic } from "./Clinic";
 import type { Specialty } from "./Specialty";
 
 export type Provider = {
@@ -8,7 +8,7 @@ export type Provider = {
   phone: string;
   gender: string;
   about: string;
-  clinics: ProviderClinics[];
+  clinics: Clinic[];
   profile_pic?: string;
   specialty: Specialty;
   languages: string[];

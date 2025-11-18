@@ -1,11 +1,11 @@
 import { LocationPinIcon } from "../../assets/icons";
-import type { ProviderClinics } from "../../domain";
+import type { Clinic } from "../../domain";
 
 type ProviderLocationsProps = {
-  locations: ProviderClinics[];
+  locations: Clinic[];
 };
 
-const buildFullAddress = (location: ProviderClinics): string => {
+const buildFullAddress = (location: Clinic): string => {
   const { address, city, state, zip_code } = location;
 
   return [address, city, state, zip_code].join(", ").trim();
