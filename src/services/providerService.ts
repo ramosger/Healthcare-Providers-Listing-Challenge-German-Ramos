@@ -7,7 +7,7 @@ type ProvidersApiResponse = {
   meta: unknown;
 };
 
-const API_BASE_URL = "http://localhost/api";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const getProviders = async (): Promise<Provider[]> => {
   const response = await axios.get<ProvidersApiResponse>(`${API_BASE_URL}/providers`);
