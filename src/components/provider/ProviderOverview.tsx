@@ -23,7 +23,7 @@ export const ProviderOverview = ({
       </ProviderOverviewSection>
 
       <ProviderOverviewSection title="Contact information">
-        <div className="pt-1 flex flex-col gap-1">
+        <div className="pt-1 flex flex-col lg:flex-row gap-1 lg:gap-8">
           <ProviderContactRow icon={<PhoneIcon />} text={phone} />
           <ProviderContactRow icon={<MailIcon />} text={email} />
         </div>
