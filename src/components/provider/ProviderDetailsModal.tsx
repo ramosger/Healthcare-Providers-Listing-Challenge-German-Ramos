@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { CloseIcon, UserIcon, LocationPinIcon } from "../../assets/icons";
+import { CloseIconButton, UserIcon, LocationPinIcon } from "../../assets/icons";
 import type { Provider } from "../../domain";
 import { ProviderLocations } from "./ProviderLocations";
 import { ProviderOverview } from "./ProviderOverview";
@@ -32,7 +32,7 @@ export const ProviderDetailsModal = ({
 
       <div className="relative z-50 bg-background-surface rounded-2xl w-[90%] lg:w-full max-w-lg lg:max-w-xl max-h-[624px] lg:max-h-[546px] p-6 shadow-xl border border-border-default flex flex-col">
         <div className="cursor-pointer">
-          <CloseIcon onClose={onClose} />
+          <CloseIconButton onClose={onClose} />
         </div>
 
         <div className="flex items-center gap-4 pb-4">

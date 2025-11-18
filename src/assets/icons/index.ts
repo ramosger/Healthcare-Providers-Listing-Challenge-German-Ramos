@@ -3,7 +3,7 @@ export * from "./SearchIcon";
 export * from "./ChevronDownIcon";
 export * from "./LogoutIcon"
 export * from "./LocationIcon"
-export * from "./CloseIcon"
+export * from "./CloseIconButton"
 export * from "./UserIcon"
 export * from "./LocationPinIcon"
 export * from "./PhoneIcon"

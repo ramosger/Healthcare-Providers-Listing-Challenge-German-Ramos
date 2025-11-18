@@ -1,8 +1,8 @@
-type CloseIconProps = {
+type CloseIconButtonProps = {
   onClose: () => void;
 };
 
-export const CloseIcon = ({ onClose }: CloseIconProps) => {
+export const CloseIconButton = ({ onClose }: CloseIconButtonProps) => {
   return (
     <button
       type="button"
