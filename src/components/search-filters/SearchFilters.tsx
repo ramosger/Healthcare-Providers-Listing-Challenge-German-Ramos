@@ -21,7 +21,7 @@ export const SearchFilters = () => {
         </div>
       </div>
 
-      <p className="self-stretch justify-start text-text-secondary text-base font-medium font-default leading-6">6 providers found</p>
+      <p className="self-stretch justify-start text-text-secondary text-base font-medium leading-6">6 providers found</p>
     </section>
   );
 };
