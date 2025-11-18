@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Logout } from "../../assets/icons";
+import { LogoutIcon } from "../../assets/icons";
 
 type ProfileMenuProps = {
   name: string;
@@ -33,7 +33,7 @@ export const ProfileMenu = ({
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="cursor-pointer relative rounded-full overflow-hidden text-white flex items-center justify-center h-8 w-8 lg:h-10 lg:w-10 bg-(--background-default)"
+        className="size-8 text-white lg:size-10 font-light relative rounded-full overflow-hidden bg-background-brand"
       >
         {initials}
       </button>
@@ -41,13 +41,13 @@ export const ProfileMenu = ({
       {isOpen && (
         <div
           id="profile-menu"
-          className="absolute right-0 mt-2 w-56 p-2 rounded-md shadow-[0px_1px_4px_0px_rgba(14,16,23,0.10)] outline-1 -outline-offset-1 outline-(--border-default) inline-flex flex-col justify-start items-start bg-(--background-default-default)"
+          className="absolute right-0 mt-2 w-56 p-2 rounded-md shadow-[0px_1px_4px_0px_rgba(14,16,23,0.10)] outline-1 -outline-offset-1 outline-border-default inline-flex flex-col justify-start items-start bg-background-surface"
         >
-          <div className="self-stretch p-2 border-b inline-flex flex-col justify-start items-start gap-2.5 border-(--border-default)">
-            <p className="self-stretch justify-start text-sm font-medium font-[DM_Sans] leading-5 text-(--text-default)">
+          <div className="self-stretch p-2 border-b inline-flex flex-col justify-start items-start gap-2.5 border-border-default)">
+            <p className="self-stretch justify-start text-sm font-medium leading-5 text-text-primary">
               {name}
             </p>
-            <p className="self-stretch justify-start text-xs font-normal font-[DM_Sans] leading-4 text-(--text-tertiary)">
+            <p className="self-stretch justify-start text-xs font-normal leading-4 text-text-secondary">
               {email}
             </p>
           </div>
@@ -60,9 +60,9 @@ export const ProfileMenu = ({
               onLogout?.();
             }}
           >
-            <Logout />
+            <LogoutIcon />
 
-            <p className="self-stretch justify-start text-sm font-normal font-[DM_Sans] leading-5 line-clamp-1 text-(--text-default)">
+            <p className="self-stretch justify-start text-sm font-normal leading-5 line-clamp-1 text-text-primary">
               Log out
             </p>
           </button>
