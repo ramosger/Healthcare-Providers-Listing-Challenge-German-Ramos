@@ -10,7 +10,7 @@ export const ProviderCard = ({
   provider,
   onViewDetails,
 }: ProviderCardProps) => {
-  const { profile_pic, name, speciality, clinics } = provider;
+  const { profile_pic, name, specialty, clinics } = provider;
 
   const primaryClinic = clinics[0];
   const primaryLocation =
@@ -33,7 +33,7 @@ export const ProviderCard = ({
           <div className="flex flex-col gap-2">
             <h2 className="text-text-primary text-2xl font-semibold">{name}</h2>
             <p className="text-text-secondary text-xl font-medium">
-              {speciality?.name ?? "Sin especialidad"}
+              {specialty.name}
             </p>
           </div>
 

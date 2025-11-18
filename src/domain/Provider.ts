@@ -1,5 +1,5 @@
 import type { ProviderClinics } from "./ProviderClinics";
-import type { Speciality } from "./Speciality";
+import type { Specialty } from "./Specialty";
 
 export type Provider = {
   id: string;
@@ -10,6 +10,6 @@ export type Provider = {
   about: string;
   clinics: ProviderClinics[];
   profile_pic?: string;
-  speciality: Speciality;
+  specialty: Specialty;
   languages: string[];
 };

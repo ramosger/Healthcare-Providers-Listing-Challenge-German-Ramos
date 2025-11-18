@@ -22,6 +22,7 @@ export const ProvidersListing = () => {
     try {
       const providersData = await getProviders();
       setProviders(providersData);
+      console.log(providersData);
     } catch (err) {
       console.error("Error loading providers:", err);
       setError("There was a problem loading providers. Please try again.");
