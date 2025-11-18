@@ -1,12 +1,14 @@
 import { useState, useMemo, useEffect } from "react";
-import axios from "axios";
 import { ProviderCard, ProviderDetailsModal } from "..";
 import type { Provider } from "../../domain";
 import { SearchFilters } from "..";
+import { getProviders } from "../../services";
+import { ErrorComponent, Spinner } from "../../shared";
 
 export const ProvidersListing = () => {
   const [providers, setProviders] = useState<Provider[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [selectedProviderId, setSelectedProviderId] = useState<
     Provider["id"] | null
   >(null);
@@ -16,28 +18,32 @@ export const ProvidersListing = () => {
     [providers, selectedProviderId]
   );
 
-  useEffect(() => {
-    const fetchProviders = async () => {
-      try {
-        const res = await axios.get("http://localhost/api/providers");
-        setProviders(res.data.data);
-        console.log(res.data.data);
-      } catch (error) {
-        console.error("Error loading providers:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const providersData = await getProviders();
+      setProviders(providersData);
+    } catch (err) {
+      console.error("Error loading providers:", err);
+      setError("There was a problem loading providers. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    fetchProviders();
+  useEffect(() => {
+    fetchData();
   }, []);
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center py-10">
-        <h1 className="text-lg">Loading providers...</h1>
+      <div className="flex justify-center items-center py-110">
+        <Spinner />
       </div>
     );
+  }
+
+  if (error) {
+    return <ErrorComponent error={error} fetchData={fetchData} />;
   }
 
   return (
