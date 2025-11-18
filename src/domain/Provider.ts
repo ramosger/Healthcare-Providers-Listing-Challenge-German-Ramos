@@ -1,15 +1,15 @@
-import type { ProviderLocation } from "./ProviderLocation";
+import type { ProviderClinics } from "./ProviderClinics";
+import type { Speciality } from "./Speciality";
 
 export type Provider = {
   id: string;
-  imageSrc: string;
   name: string;
-  speciality: string;
-  primaryLocation: string;
-  extraLocationsLabel: string;
-  about: string;
-  phone: string;
   email: string;
+  phone: string;
+  gender: string;
+  about: string;
+  clinics: ProviderClinics[];
+  profile_pic?: string;
+  speciality: Speciality;
   languages: string[];
-  locations: ProviderLocation[];
 };

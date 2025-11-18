@@ -1,2 +1,2 @@
 export * from "./Provider"
-export * from "./ProviderLocation"
+export * from "./ProviderClinics"

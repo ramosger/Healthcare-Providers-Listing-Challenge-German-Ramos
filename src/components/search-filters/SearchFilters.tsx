@@ -1,7 +1,11 @@
 import { SearchFiltersHeader, NameFilter, FilterDropdown } from "..";
-import * as Constants from '../../shared';
+import * as Constants from "../../shared";
 
-export const SearchFilters = () => {
+type SearchFiltersProps = {
+  resultsCount: number;
+};
+
+export const SearchFilters = ({ resultsCount }: SearchFiltersProps) => {
   return (
     <section className="w-full mt-22 self-stretch px-6 lg:px-44 lg:pt-6 lg:pb-3 py-3 inline-flex flex-col justify-start items-start gap-4 lg:gap-7">
       <SearchFiltersHeader />
@@ -15,13 +19,21 @@ export const SearchFilters = () => {
             options={Constants.SPECIALITIES}
           />
 
-          <FilterDropdown placeholder="All genders" options={Constants.GENDERS} />
+          <FilterDropdown
+            placeholder="All genders"
+            options={Constants.GENDERS}
+          />
 
-          <FilterDropdown placeholder="All clinics" options={Constants.CLINICS} />
+          <FilterDropdown
+            placeholder="All clinics"
+            options={Constants.CLINICS}
+          />
         </div>
       </div>
 
-      <p className="self-stretch justify-start text-text-secondary text-base font-medium leading-6">6 providers found</p>
+      <p className="self-stretch justify-start text-text-secondary text-base font-medium leading-6">
+        {resultsCount} provider{resultsCount === 1 ? "" : "s"} found
+      </p>
     </section>
   );
 };
