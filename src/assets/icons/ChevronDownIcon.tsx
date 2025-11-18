@@ -1,4 +1,4 @@
-export const ChevronDown = () => {
+export const ChevronDownIcon = () => {
   return (
     <svg
       width="16"

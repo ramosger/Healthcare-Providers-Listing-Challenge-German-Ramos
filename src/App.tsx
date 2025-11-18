@@ -1,4 +1,4 @@
-import { Header, SearchFilters } from "./components";
+import { Header, SearchFilters, ProvidersListing } from "./components";
 
 function App() {
   return (
@@ -6,6 +6,7 @@ function App() {
       <div className="min-h-dvh bg-white text-slate-900">
         <Header />
         <SearchFilters />
+        <ProvidersListing />
       </div>
     </>
   );
