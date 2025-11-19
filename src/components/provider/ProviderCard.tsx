@@ -14,7 +14,7 @@ export const ProviderCard = ({
 
   const primaryClinic = clinics[0];
   const primaryLocation =
-    primaryClinic?.name ?? primaryClinic?.address ?? "Sin ubicación principal";
+    primaryClinic?.name ?? primaryClinic?.address ?? "No main location";
 
   const extraLocationsCount = clinics.length > 1 ? clinics.length - 1 : 0;
   const extraLocationsLabel =
