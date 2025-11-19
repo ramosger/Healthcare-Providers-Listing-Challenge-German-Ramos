@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { ProviderCard, ProviderDetailsModal } from "..";
 import type { Provider } from "../../domain";
 import { SearchFilters } from "..";
@@ -18,21 +18,24 @@ export const ProvidersListing = () => {
     [providers, selectedProviderId]
   );
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+
     try {
       const providersData = await getProviders();
       setProviders(providersData);
     } catch (err) {
       console.error("Error loading providers:", err);
       setError("There was a problem loading providers. Please try again.");
-    } finally {
-      setIsLoading(false);
     }
-  };
+
+    setIsLoading(false);
+  }, []);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    Promise.resolve().then(fetchData);
+  }, [fetchData]);
 
   if (isLoading) {
     return (
