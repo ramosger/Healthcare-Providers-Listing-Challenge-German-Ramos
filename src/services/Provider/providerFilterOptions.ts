@@ -1,5 +1,5 @@
-import type { Provider, Clinic } from "../domain";
-import type { DropdownOption } from "../shared";
+import type { Provider, Clinic } from "../../domain";
+import type { DropdownOption } from "../../shared";
 
 export type ProviderFilterOptions = {
   specialtyOptions: DropdownOption[];

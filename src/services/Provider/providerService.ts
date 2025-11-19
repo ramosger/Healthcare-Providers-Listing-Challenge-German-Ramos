@@ -1,12 +1,7 @@
 import axios from "axios";
-import type { Provider } from "../domain";
-import type { GetProvidersResponse } from "../models";
-
-export type ProviderFilters = {
-  specialtyId: string | null;
-  clinicId: string | null;
-  gender: string | null;
-};
+import type { Provider } from "../../domain";
+import type { GetProvidersResponse } from "../../models";
+import type { ProviderFilters } from "./providerFilters";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
