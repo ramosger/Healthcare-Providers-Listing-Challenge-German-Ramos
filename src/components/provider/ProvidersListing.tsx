@@ -1,12 +1,22 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { ProviderCard, ProviderDetailsModal } from "..";
 import type { Provider } from "../../domain";
 import { SearchFilters } from "..";
-import { getProviders } from "../../services";
+import {
+  getAllProviders,
+  getFilteredProviders,
+  type ProviderFilters,
+} from "../../services";
 import { ErrorComponent, Spinner } from "../../shared";
 
 export const ProvidersListing = () => {
-  const [providers, setProviders] = useState<Provider[]>([]);
+  const [allProviders, setAllProviders] = useState<Provider[]>([]);
+  const [filteredProviders, setFilteredProviders] = useState<Provider[]>([]);
+  const [filters, setFilters] = useState<ProviderFilters>({
+    specialtyId: null,
+    clinicId: null,
+    gender: null,
+  });
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedProviderId, setSelectedProviderId] = useState<
@@ -14,25 +24,44 @@ export const ProvidersListing = () => {
   >(null);
 
   const selectedProvider = useMemo(
-    () => providers.find((p) => p.id === selectedProviderId) ?? null,
-    [providers, selectedProviderId]
+    () => filteredProviders.find((p) => p.id === selectedProviderId) ?? null,
+    [filteredProviders, selectedProviderId]
   );
 
-  const fetchData = async () => {
+  const handleFiltersChange = (next: ProviderFilters) => {
+    setFilters(next);
+  };
+
+  const fetchData = useCallback(async () => {
     try {
-      const providersData = await getProviders();
-      setProviders(providersData);
+      setIsLoading(true);
+
+      const hasFilters =
+        filters.specialtyId !== null ||
+        filters.clinicId !== null ||
+        filters.gender !== null;
+
+      if (!hasFilters) {
+        const data = await getAllProviders();
+        setAllProviders(data);
+        setFilteredProviders(data);
+      } else {
+        const data = await getFilteredProviders(filters);
+        setFilteredProviders(data);
+      }
+
+      setError(null);
     } catch (err) {
       console.error("Error loading providers:", err);
       setError("There was a problem loading providers. Please try again.");
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [filters]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   if (isLoading) {
     return (
@@ -48,9 +77,15 @@ export const ProvidersListing = () => {
 
   return (
     <>
-      <SearchFilters resultsCount={providers.length} providers={providers} />
+      <SearchFilters
+        resultsCount={filteredProviders.length}
+        providers={allProviders.length ? allProviders : filteredProviders}
+        filters={filters}
+        onFiltersChange={handleFiltersChange}
+      />
+
       <div className="w-full px-6 lg:px-44 grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-4">
-        {providers.map((provider) => (
+        {filteredProviders.map((provider) => (
           <ProviderCard
             key={provider.id}
             provider={provider}

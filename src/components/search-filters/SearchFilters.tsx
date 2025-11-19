@@ -3,15 +3,20 @@ import { SearchFiltersHeader, NameFilter, FilterDropdown } from "..";
 import type { Clinic, Provider } from "../../domain";
 import { GENDER_OPTIONS } from "../../shared";
 import type { DropdownOption } from "../../shared";
+import type { ProviderFilters } from "../../services";
 
 type SearchFiltersProps = {
   resultsCount: number;
   providers: Provider[];
+  filters: ProviderFilters;
+  onFiltersChange: (f: ProviderFilters) => void;
 };
 
 export const SearchFilters = ({
   resultsCount,
   providers,
+  filters,
+  onFiltersChange,
 }: SearchFiltersProps) => {
   const { specialtyOptions, clinicOptions } = useMemo(() => {
     const specialtiesMap = new Map<string, { id: string; name: string }>();
@@ -54,6 +59,27 @@ export const SearchFilters = ({
     return { specialtyOptions, clinicOptions };
   }, [providers]);
 
+  const handleSpecialtyChange = (specialtyId: string | null) => {
+    onFiltersChange({
+      ...filters,
+      specialtyId,
+    });
+  };
+
+  const handleGenderChange = (gender: string | null) => {
+    onFiltersChange({
+      ...filters,
+      gender,
+    });
+  };
+
+  const handleClinicChange = (clinicId: string | null) => {
+    onFiltersChange({
+      ...filters,
+      clinicId,
+    });
+  };
+
   return (
     <section className="w-full mt-22 self-stretch px-6 lg:px-44 lg:pt-6 lg:pb-3 py-3 inline-flex flex-col justify-start items-start gap-4 lg:gap-7">
       <SearchFiltersHeader />
@@ -65,11 +91,23 @@ export const SearchFilters = ({
           <FilterDropdown
             placeholder="All specialities"
             options={specialtyOptions}
+            value={filters.specialtyId}
+            onChange={handleSpecialtyChange}
           />
 
-          <FilterDropdown placeholder="All genders" options={GENDER_OPTIONS} />
+          <FilterDropdown
+            placeholder="All genders"
+            options={GENDER_OPTIONS}
+            value={filters.gender}
+            onChange={handleGenderChange}
+          />
 
-          <FilterDropdown placeholder="All clinics" options={clinicOptions} />
+          <FilterDropdown
+            placeholder="All clinics"
+            options={clinicOptions}
+            value={filters.clinicId}
+            onChange={handleClinicChange}
+          />
         </div>
       </div>
 

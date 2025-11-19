@@ -5,23 +5,26 @@ import type { DropdownOption } from "../../shared";
 type FilterDropdownProps = {
   placeholder: string;
   options: DropdownOption[];
+  value: string | null;
   onChange?: (value: string | null) => void;
 };
 
 export const FilterDropdown = ({
   placeholder,
   options,
+  value,
   onChange,
 }: FilterDropdownProps) => {
-  const [selected, setSelected] = useState<DropdownOption | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const displayText = selected?.label ?? placeholder;
+  const selectedOption =
+    options.find((option) => option.value === value) ?? null;
+
+  const displayText = selectedOption?.label ?? placeholder;
 
   const handleSelect = (option: DropdownOption | null) => {
-    setSelected(option);
     setIsOpen(false);
-    onChange?.(option?.value ?? null);
+    onChange?.(option ? option.value : null);
   };
 
   return (
