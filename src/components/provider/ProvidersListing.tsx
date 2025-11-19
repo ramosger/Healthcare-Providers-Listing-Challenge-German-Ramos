@@ -48,7 +48,7 @@ export const ProvidersListing = () => {
 
   return (
     <>
-      <SearchFilters resultsCount={providers.length} />
+      <SearchFilters resultsCount={providers.length} providers={providers} />
       <div className="w-full px-6 lg:px-44 grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-4">
         {providers.map((provider) => (
           <ProviderCard

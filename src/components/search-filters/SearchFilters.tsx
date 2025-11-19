@@ -1,49 +1,58 @@
-import { useState, useEffect } from "react";
+import { useMemo } from "react";
 import { SearchFiltersHeader, NameFilter, FilterDropdown } from "..";
-import type { Clinic, Specialty } from "../../domain";
-import * as Constants from "../../shared";
-import { getSpecialties } from "../../services";
+import type { Clinic, Provider } from "../../domain";
+import { GENDER_OPTIONS } from "../../shared";
+import type { DropdownOption } from "../../shared";
 
 type SearchFiltersProps = {
   resultsCount: number;
+  providers: Provider[];
 };
 
-export const SearchFilters = ({ resultsCount }: SearchFiltersProps) => {
-  const [specialties, setSpecialties] = useState<Specialty[]>([]);
-  const [isSpecialtiesLoading, setIsSpecialtiesLoading] = useState(true);
-  const [specialtiesError, setSpecialtiesError] = useState<string | null>(null);
-  const [clinics, setClinics] = useState<Clinic[]>([]);
-  const [isClinicsLoading, setIsClinicsLoading] = useState(true);
-  const [clinicsError, setClinicsError] = useState<string | null>(null);
+export const SearchFilters = ({
+  resultsCount,
+  providers,
+}: SearchFiltersProps) => {
+  const { specialtyOptions, clinicOptions } = useMemo(() => {
+    const specialtiesMap = new Map<string, { id: string; name: string }>();
+    const clinicsMap = new Map<string, { id: string; name: string }>();
 
-  const fetchSpecialtiesData = async () => {
-      try {
-        const specialtiesData = await getSpecialties();
-        setSpecialties(specialtiesData);
-      } catch (err) {
-        console.error("Error loading specialties:", err);
-        setSpecialtiesError("There was a problem loading specialties. Please try again.");
-      } finally {
-        setIsSpecialtiesLoading(false);
-      }
-    };
+    providers.forEach((p: Provider) => {
+      if (p.specialty) {
+        const id = p.specialty.id;
+        const name = p.specialty.name;
 
-  const fetchClinicsData = async () => {
-      try {
-        const clinicsData = await getClinics();
-        setClinics(clinicsData);
-      } catch (err) {
-        console.error("Error loading clinics:", err);
-        setClinicsError("There was a problem loading clinics. Please try again.");
-      } finally {
-        setIsClinicsLoading(false);
+        if (!specialtiesMap.has(id)) {
+          specialtiesMap.set(id, { id, name });
+        }
       }
-    };
-  
-    useEffect(() => {
-      fetchSpecialtiesData();
-      fetchClinicsData();
-    }, []);
+
+      p.clinics.forEach((c: Clinic) => {
+        const id = c.id;
+        const name = c.name;
+
+        if (!clinicsMap.has(id)) {
+          clinicsMap.set(id, { id, name });
+        }
+      });
+    });
+
+    const specialtyOptions: DropdownOption[] = Array.from(
+      specialtiesMap.values()
+    ).map((s) => ({
+      label: s.name,
+      value: s.id,
+    }));
+
+    const clinicOptions: DropdownOption[] = Array.from(clinicsMap.values()).map(
+      (c) => ({
+        label: c.name,
+        value: c.id,
+      })
+    );
+
+    return { specialtyOptions, clinicOptions };
+  }, [providers]);
 
   return (
     <section className="w-full mt-22 self-stretch px-6 lg:px-44 lg:pt-6 lg:pb-3 py-3 inline-flex flex-col justify-start items-start gap-4 lg:gap-7">
@@ -55,18 +64,12 @@ export const SearchFilters = ({ resultsCount }: SearchFiltersProps) => {
         <div className="self-stretch inline-flex flex-col lg:flex-row justify-center lg:justify-start items-start gap-3">
           <FilterDropdown
             placeholder="All specialities"
-            options={specialties}
+            options={specialtyOptions}
           />
 
-          <FilterDropdown
-            placeholder="All genders"
-            options={Constants.GENDERS}
-          />
+          <FilterDropdown placeholder="All genders" options={GENDER_OPTIONS} />
 
-          <FilterDropdown
-            placeholder="All clinics"
-            options={clinics}
-          />
+          <FilterDropdown placeholder="All clinics" options={clinicOptions} />
         </div>
       </div>
 

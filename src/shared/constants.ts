@@ -1,4 +1,9 @@
-export const GENDERS = ["Male", "Female", "Other"];
+export const GENDERS = ["Male", "Female", "Other"] as const;
+
+export const GENDER_OPTIONS = GENDERS.map((g) => ({
+  label: g,
+  value: g,
+}));
 
 export const DETAIL_TABS = {
   OVERVIEW: "overview",
