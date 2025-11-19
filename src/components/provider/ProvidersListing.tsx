@@ -22,6 +22,14 @@ export const ProvidersListing = () => {
   const [selectedProviderId, setSelectedProviderId] = useState<
     Provider["id"] | null
   >(null);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const visibleProviders = useMemo(() => {
+    const term = searchTerm.trim().toLowerCase();
+    if (!term) return filteredProviders;
+
+    return filteredProviders.filter((p) => p.name.toLowerCase().includes(term));
+  }, [filteredProviders, searchTerm]);
 
   const selectedProvider = useMemo(
     () => filteredProviders.find((p) => p.id === selectedProviderId) ?? null,
@@ -30,6 +38,10 @@ export const ProvidersListing = () => {
 
   const handleFiltersChange = (next: ProviderFilters) => {
     setFilters(next);
+  };
+
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
   };
 
   const fetchData = useCallback(async () => {
@@ -78,14 +90,16 @@ export const ProvidersListing = () => {
   return (
     <>
       <SearchFilters
-        resultsCount={filteredProviders.length}
+        resultsCount={visibleProviders.length}
         providers={allProviders.length ? allProviders : filteredProviders}
         filters={filters}
         onFiltersChange={handleFiltersChange}
+        searchTerm={searchTerm}
+        onSearchChange={handleSearchChange}
       />
 
       <div className="w-full px-6 lg:px-44 grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-4">
-        {filteredProviders.map((provider) => (
+        {visibleProviders.map((provider) => (
           <ProviderCard
             key={provider.id}
             provider={provider}

@@ -10,6 +10,8 @@ type SearchFiltersProps = {
   providers: Provider[];
   filters: ProviderFilters;
   onFiltersChange: (f: ProviderFilters) => void;
+  searchTerm: string;
+  onSearchChange: (value: string) => void;
 };
 
 export const SearchFilters = ({
@@ -17,6 +19,8 @@ export const SearchFilters = ({
   providers,
   filters,
   onFiltersChange,
+  searchTerm,
+  onSearchChange
 }: SearchFiltersProps) => {
   const { specialtyOptions, clinicOptions } = useMemo(() => {
     const specialtiesMap = new Map<string, { id: string; name: string }>();
@@ -85,7 +89,7 @@ export const SearchFilters = ({
       <SearchFiltersHeader />
 
       <div className="self-stretch inline-flex flex-col justify-start items-start gap-5">
-        <NameFilter />
+        <NameFilter value={searchTerm} onChange={onSearchChange} />
 
         <div className="self-stretch inline-flex flex-col lg:flex-row justify-center lg:justify-start items-start gap-3">
           <FilterDropdown
