@@ -1,9 +1,9 @@
 import { useState, useMemo, useEffect, useCallback } from "react";
 import { ProviderCard, ProviderDetailsModal } from "..";
-import type { Provider } from "../../domain";
-import { SearchFilters } from "..";
-import { getProviders } from "../../services";
-import { ErrorComponent, Spinner } from "../../shared";
+import type { Provider } from "@domain";
+import { SearchFilters } from "@components/search-filters";
+import { getProviders } from "@services";
+import { ErrorComponent, Spinner } from "@shared";
 
 export const ProvidersListing = () => {
   const [providers, setProviders] = useState<Provider[]>([]);

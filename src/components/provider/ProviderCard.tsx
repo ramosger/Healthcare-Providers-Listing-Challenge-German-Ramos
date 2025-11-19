@@ -1,5 +1,5 @@
-import { LocationIcon } from "../../assets/icons";
-import type { Provider } from "../../domain";
+import { LocationIcon } from "@assets/icons";
+import type { Provider } from "@domain";
 
 type ProviderCardProps = {
   provider: Provider;

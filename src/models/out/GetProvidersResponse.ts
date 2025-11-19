@@ -1,4 +1,4 @@
-import type { Provider } from "../../domain";
+import type { Provider } from "@domain";
 
 export type GetProvidersResponse = {
   data: Provider[];

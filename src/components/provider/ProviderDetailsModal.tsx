@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { CloseIconButton, UserIcon, LocationPinIcon } from "../../assets/icons";
-import type { Provider } from "../../domain";
-import { ProviderLocations } from "./ProviderLocations";
-import { ProviderOverview } from "./ProviderOverview";
-import { DETAIL_TABS, type DetailTab } from "../../shared";
+import { CloseIconButton, UserIcon, LocationPinIcon } from "@assets/icons";
+import type { Provider } from "@domain";
+import { ProviderLocations, ProviderOverview } from "@components/provider";
+import { DETAIL_TABS, type DetailTab } from "@shared";
 
 type ProviderDetailsModalProps = {
   isOpen: boolean;

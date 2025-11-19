@@ -1,5 +1,5 @@
-import { SearchFiltersHeader, NameFilter, FilterDropdown } from "..";
-import * as Constants from "../../shared";
+import { SearchFiltersHeader, NameFilter, FilterDropdown } from "@components/search-filters";
+import * as Constants from "@shared";
 
 type SearchFiltersProps = {
   resultsCount: number;

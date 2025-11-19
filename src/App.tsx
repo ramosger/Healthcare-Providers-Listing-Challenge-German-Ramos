@@ -1,4 +1,4 @@
-import { Header, ProvidersListing } from "./components";
+import { Header, ProvidersListing } from "@components";
 
 function App() {
   return (

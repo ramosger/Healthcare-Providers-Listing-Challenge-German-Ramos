@@ -1,5 +1,5 @@
-import { LocationPinIcon } from "../../assets/icons";
-import type { ProviderClinics } from "../../domain";
+import { LocationPinIcon } from "@assets/icons";
+import type { ProviderClinics } from "@domain";
 
 type ProviderLocationsProps = {
   locations: ProviderClinics[];
