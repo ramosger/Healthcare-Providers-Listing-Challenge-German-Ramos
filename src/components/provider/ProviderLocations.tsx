@@ -1,20 +1,10 @@
 import { LocationPinIcon } from "@assets/icons";
 import type { ProviderClinics } from "@domain";
+import { buildMapsUrl, buildFullAddress } from "@utils/maps";
 
 type ProviderLocationsProps = {
   locations: ProviderClinics[];
 };
-
-const buildFullAddress = (location: ProviderClinics): string => {
-  const { address, city, state, zip_code } = location;
-
-  return [address, city, state, zip_code].join(", ").trim();
-};
-
-const buildMapsUrl = (fullAddress: string): string =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    fullAddress
-  )}`;
 
 export const ProviderLocations = ({ locations }: ProviderLocationsProps) => {
   return (
