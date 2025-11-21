@@ -30,8 +30,7 @@ export const useProviders = (filters: ProviderFilters) => {
 
       setError(null);
     } catch (err) {
-      console.error("Error loading providers:", err);
-      setError("There was a problem loading providers. Please try again.");
+      setError(`There was a problem loading providers. Please try again. - (${err})`);
     } finally {
       setIsLoading(false);
     }
