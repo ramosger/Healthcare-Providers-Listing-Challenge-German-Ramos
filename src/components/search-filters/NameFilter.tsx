@@ -1,18 +1,12 @@
+import type { ComponentProps } from "react";
 import { SearchInput } from "../../shared";
 
-type NameFilterProps = {
-  value: string;
-  onChange: (value: string) => void;
-};
+type NameFilterProps = ComponentProps<typeof SearchInput>;
 
-export const NameFilter = ({ value, onChange }: NameFilterProps) => {
+export const NameFilter = (props: NameFilterProps) => {
   return (
     <div className="self-stretch inline-flex flex-col justify-start items-start gap-2.5">
-      <SearchInput
-        placeholder="Search providers by name..."
-        value={value}
-        onChange={onChange}
-      />
+      <SearchInput {...props} />
     </div>
   );
 };
