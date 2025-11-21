@@ -1,4 +1,4 @@
-import type { Provider, Clinic } from "../../domain";
+import type { Provider } from "../../domain";
 import type { DropdownOption } from "../../shared";
 
 export type ProviderFilterOptions = {
@@ -7,7 +7,7 @@ export type ProviderFilterOptions = {
 };
 
 export function buildProviderFilterOptions(
-  providers: Provider[],
+  providers: Provider[]
 ): ProviderFilterOptions {
   const specialtiesMap = new Map<string, { id: string; name: string }>();
   const clinicsMap = new Map<string, { id: string; name: string }>();
@@ -20,24 +20,24 @@ export function buildProviderFilterOptions(
       });
     }
 
-    p.clinics.forEach((c: Clinic) => {
+    p.clinics.forEach((c) => {
       clinicsMap.set(c.id, { id: c.id, name: c.name });
     });
   });
 
   const specialtyOptions: DropdownOption[] = Array.from(
-    specialtiesMap.values(),
+    specialtiesMap.values()
   ).map((s) => ({
     label: s.name,
     value: s.id,
   }));
 
-  const clinicOptions: DropdownOption[] = Array.from(
-    clinicsMap.values(),
-  ).map((c) => ({
-    label: c.name,
-    value: c.id,
-  }));
+  const clinicOptions: DropdownOption[] = Array.from(clinicsMap.values()).map(
+    (c) => ({
+      label: c.name,
+      value: c.id,
+    })
+  );
 
   return { specialtyOptions, clinicOptions };
 }
