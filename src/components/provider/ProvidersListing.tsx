@@ -1,10 +1,7 @@
 import { useState, useMemo } from "react";
 import { ProviderCard, ProviderDetailsModal, SearchFilters } from "..";
 import type { Provider } from "../../domain";
-import {
-  type ProviderFilters,
-  initialProviderFilters,
-} from "../../services";
+import { type ProviderFilters, initialProviderFilters } from "../../services";
 import { ErrorComponent, Spinner } from "../../shared";
 import { useProviders } from "../../hooks";
 
@@ -18,8 +15,7 @@ export const ProvidersListing = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const {
-    allProviders,
-    filteredProviders,
+    providers,
     visibleProviders,
     isLoading,
     error,
@@ -47,7 +43,7 @@ export const ProvidersListing = () => {
     <>
       <SearchFilters
         resultsCount={visibleProviders.length}
-        providers={allProviders.length ? allProviders : filteredProviders}
+        providers={providers}
         filters={filters}
         onFiltersChange={setFilters}
         searchTerm={searchTerm}

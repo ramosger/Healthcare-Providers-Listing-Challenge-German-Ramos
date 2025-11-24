@@ -9,8 +9,7 @@ import {
 } from "../services";
 
 export const useProviders = (filters: ProviderFilters, searchTerm: string) => {
-  const [allProviders, setAllProviders] = useState<Provider[]>([]);
-  const [filteredProviders, setFilteredProviders] = useState<Provider[]>([]);
+  const [providers, setProviders] = useState<Provider[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,15 +19,11 @@ export const useProviders = (filters: ProviderFilters, searchTerm: string) => {
 
       const hasFilters = hasActiveProviderFilters(filters);
 
-      if (!hasFilters) {
-        const data = await getAllProviders();
-        setAllProviders(data);
-        setFilteredProviders(data);
-      } else {
-        const data = await getFilteredProviders(filters);
-        setFilteredProviders(data);
-      }
+      const data = hasFilters
+        ? await getFilteredProviders(filters)
+        : await getAllProviders();
 
+      setProviders(data);
       setError(null);
     } catch (err) {
       setError(
@@ -44,13 +39,12 @@ export const useProviders = (filters: ProviderFilters, searchTerm: string) => {
   }, [loadProviders]);
 
   const visibleProviders = useMemo(
-    () => getVisibleProviders(filteredProviders, searchTerm),
-    [filteredProviders, searchTerm]
+    () => getVisibleProviders(providers, searchTerm),
+    [providers, searchTerm]
   );
 
   return {
-    allProviders,
-    filteredProviders,
+    providers,
     visibleProviders,
     isLoading,
     error,
