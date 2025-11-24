@@ -6,9 +6,9 @@ export type ProviderFilterOptions = {
   clinicOptions: DropdownOption[];
 };
 
-export function buildProviderFilterOptions(
+export const buildProviderFilterOptions = (
   providers: Provider[]
-): ProviderFilterOptions {
+): ProviderFilterOptions => {
   const specialtiesMap = new Map<string, { id: string; name: string }>();
   const clinicsMap = new Map<string, { id: string; name: string }>();
 
@@ -40,4 +40,4 @@ export function buildProviderFilterOptions(
   );
 
   return { specialtyOptions, clinicOptions };
-}
+};
