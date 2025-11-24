@@ -1,13 +1,14 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import type { Provider } from "../domain";
 import type { ProviderFilters } from "../services";
 import {
   getAllProviders,
   getFilteredProviders,
   hasActiveProviderFilters,
+  getVisibleProviders,
 } from "../services";
 
-export const useProviders = (filters: ProviderFilters) => {
+export const useProviders = (filters: ProviderFilters, searchTerm: string) => {
   const [allProviders, setAllProviders] = useState<Provider[]>([]);
   const [filteredProviders, setFilteredProviders] = useState<Provider[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +31,9 @@ export const useProviders = (filters: ProviderFilters) => {
 
       setError(null);
     } catch (err) {
-      setError(`There was a problem loading providers. Please try again. - (${err})`);
+      setError(
+        `There was a problem loading providers. Please try again. - (${err})`
+      );
     } finally {
       setIsLoading(false);
     }
@@ -40,9 +43,15 @@ export const useProviders = (filters: ProviderFilters) => {
     loadProviders();
   }, [loadProviders]);
 
+  const visibleProviders = useMemo(
+    () => getVisibleProviders(filteredProviders, searchTerm),
+    [filteredProviders, searchTerm]
+  );
+
   return {
     allProviders,
     filteredProviders,
+    visibleProviders,
     isLoading,
     error,
     refetch: loadProviders,

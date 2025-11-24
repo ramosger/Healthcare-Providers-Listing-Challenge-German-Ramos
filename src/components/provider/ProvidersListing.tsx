@@ -4,7 +4,6 @@ import type { Provider } from "../../domain";
 import {
   type ProviderFilters,
   initialProviderFilters,
-  getVisibleProviders,
 } from "../../services";
 import { ErrorComponent, Spinner } from "../../shared";
 import { useProviders } from "../../hooks";
@@ -18,16 +17,17 @@ export const ProvidersListing = () => {
   >(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const { allProviders, filteredProviders, isLoading, error, refetch } =
-    useProviders(filters);
-
-  const visibleProviders = useMemo(
-    () => getVisibleProviders(filteredProviders, searchTerm),
-    [filteredProviders, searchTerm]
-  );
+  const {
+    allProviders,
+    filteredProviders,
+    visibleProviders,
+    isLoading,
+    error,
+    refetch,
+  } = useProviders(filters, searchTerm);
 
   const selectedProvider = useMemo(
-    () => visibleProviders.find((p) => p.id === selectedProviderId) ?? null,
+    () => visibleProviders.find(({ id }) => id === selectedProviderId) ?? null,
     [visibleProviders, selectedProviderId]
   );
 
