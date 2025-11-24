@@ -1,12 +1,7 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import type { Provider } from "../domain";
 import type { ProviderFilters } from "../services";
-import {
-  getAllProviders,
-  getFilteredProviders,
-  hasActiveProviderFilters,
-  getVisibleProviders,
-} from "../services";
+import { getProviders, getVisibleProviders } from "../services";
 
 export const useProviders = (filters: ProviderFilters, searchTerm: string) => {
   const [providers, setProviders] = useState<Provider[]>([]);
@@ -17,11 +12,7 @@ export const useProviders = (filters: ProviderFilters, searchTerm: string) => {
     try {
       setIsLoading(true);
 
-      const hasFilters = hasActiveProviderFilters(filters);
-
-      const data = hasFilters
-        ? await getFilteredProviders(filters)
-        : await getAllProviders();
+      const data = await getProviders(filters);
 
       setProviders(data);
       setError(null);
