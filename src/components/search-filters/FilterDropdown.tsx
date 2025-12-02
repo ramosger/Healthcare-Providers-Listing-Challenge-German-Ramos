@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDownIcon } from "../../assets/icons";
+import { ChevronDownIcon } from "@assets/icons";
 
 type FilterDropdownProps = {
   placeholder: string;

@@ -1,4 +1,4 @@
-import { SearchInput } from "../../shared";
+import { SearchInput } from "@shared";
 
 export const NameFilter = () => {
   return (

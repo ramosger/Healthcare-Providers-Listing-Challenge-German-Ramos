@@ -1,23 +1,59 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { ProviderCard, ProviderDetailsModal } from "..";
-import type { Provider } from "../../domain";
-import { PROVIDERS } from "../../shared";
+import type { Provider } from "@domain";
+import { SearchFilters } from "@components/search-filters";
+import { getProviders } from "@services";
+import { ErrorComponent, Spinner } from "@shared";
 
 export const ProvidersListing = () => {
+  const [providers, setProviders] = useState<Provider[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [selectedProviderId, setSelectedProviderId] = useState<
     Provider["id"] | null
   >(null);
 
   const selectedProvider = useMemo(
-    () =>
-      PROVIDERS.find((provider) => provider.id === selectedProviderId) ?? null,
-    [selectedProviderId]
+    () => providers.find((p) => p.id === selectedProviderId) ?? null,
+    [providers, selectedProviderId]
   );
+
+  const fetchData = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const providersData = await getProviders();
+      setProviders(providersData);
+    } catch (err) {
+      console.error("Error loading providers:", err);
+      setError("There was a problem loading providers. Please try again.");
+    }
+
+    setIsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    Promise.resolve().then(fetchData);
+  }, [fetchData]);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center py-110">
+        <Spinner />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <ErrorComponent error={error} fetchData={fetchData} />;
+  }
 
   return (
     <>
+      <SearchFilters resultsCount={providers.length} />
       <div className="w-full px-6 lg:px-44 grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-4">
-        {PROVIDERS.map((provider: Provider) => (
+        {providers.map((provider) => (
           <ProviderCard
             key={provider.id}
             provider={provider}

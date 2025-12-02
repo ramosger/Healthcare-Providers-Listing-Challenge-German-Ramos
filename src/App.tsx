@@ -1,13 +1,10 @@
-import { Header, SearchFilters, ProvidersListing } from "./components";
+import { Header, ProvidersListing } from "@components";
 
 function App() {
   return (
     <>
-      <div className="min-h-dvh bg-white text-slate-900">
-        <Header />
-        <SearchFilters />
-        <ProvidersListing />
-      </div>
+      <Header />
+      <ProvidersListing />
     </>
   );
 }

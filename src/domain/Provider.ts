@@ -1,15 +1,14 @@
-import type { ProviderLocation } from "./ProviderLocation";
+import type { ProviderClinics, Specialty } from "@domain";
 
 export type Provider = {
   id: string;
-  imageSrc: string;
   name: string;
-  speciality: string;
-  primaryLocation: string;
-  extraLocationsLabel: string;
-  about: string;
-  phone: string;
   email: string;
+  phone: string;
+  gender: string;
+  about: string;
+  clinics: ProviderClinics[];
+  profile_pic?: string;
+  specialty: Specialty;
   languages: string[];
-  locations: ProviderLocation[];
 };

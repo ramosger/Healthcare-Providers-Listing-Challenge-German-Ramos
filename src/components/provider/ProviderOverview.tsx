@@ -1,7 +1,9 @@
-import { PhoneIcon, MailIcon, WorldIcon } from "../../assets/icons";
-import type { Provider } from "../../domain";
-import { ProviderContactRow } from "./ProviderContactRow";
-import { ProviderOverviewSection } from "./ProviderOverviewSection";
+import { PhoneIcon, MailIcon, WorldIcon } from "@assets/icons";
+import type { Provider } from "@domain";
+import {
+  ProviderContactRow,
+  ProviderOverviewSection,
+} from "@components/provider";
 
 type ProviderOverviewProps = {
   about: Provider["about"];
@@ -23,7 +25,7 @@ export const ProviderOverview = ({
       </ProviderOverviewSection>
 
       <ProviderOverviewSection title="Contact information">
-        <div className="pt-1 flex flex-col gap-1">
+        <div className="pt-1 flex flex-col lg:flex-row gap-1 lg:gap-8">
           <ProviderContactRow icon={<PhoneIcon />} text={phone} />
           <ProviderContactRow icon={<MailIcon />} text={email} />
         </div>

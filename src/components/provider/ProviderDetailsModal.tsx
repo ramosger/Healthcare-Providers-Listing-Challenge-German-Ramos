@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { CloseIconButton, UserIcon, LocationPinIcon } from "../../assets/icons";
-import type { Provider } from "../../domain";
-import { ProviderLocations } from "./ProviderLocations";
-import { ProviderOverview } from "./ProviderOverview";
-import { DETAIL_TABS, type DetailTab } from "../../shared";
+import { CloseIconButton, UserIcon, LocationPinIcon } from "@assets/icons";
+import type { Provider } from "@domain";
+import { ProviderLocations, ProviderOverview } from "@components/provider";
+import { DETAIL_TABS, type DetailTab } from "@shared";
 
 type ProviderDetailsModalProps = {
   isOpen: boolean;
@@ -21,7 +20,7 @@ export const ProviderDetailsModal = ({
   const baseTabClasses =
     "flex-1 cursor-pointer py-2 text-sm font-light rounded-full inline-flex items-center justify-center gap-2 transition";
 
-  const { imageSrc, name, speciality, about, phone, email, languages } =
+  const { profile_pic, name, specialty, about, phone, email, languages } =
     provider;
 
   if (!isOpen) return null;
@@ -37,7 +36,7 @@ export const ProviderDetailsModal = ({
 
         <div className="flex items-center gap-4 pb-4">
           <img
-            src={imageSrc}
+            src={profile_pic}
             alt={name}
             className="size-20 rounded-lg object-cover"
           />
@@ -45,7 +44,7 @@ export const ProviderDetailsModal = ({
           <div>
             <h2 className="text-2xl font-semibold text-text-primary">{name}</h2>
             <p className="text-xl text-text-secondary font-medium">
-              {speciality}
+              {specialty.name}
             </p>
           </div>
         </div>
@@ -91,7 +90,7 @@ export const ProviderDetailsModal = ({
           )}
 
           {tab === DETAIL_TABS.LOCATIONS && (
-            <ProviderLocations locations={provider.locations} />
+            <ProviderLocations locations={provider.clinics} />
           )}
         </div>
       </div>

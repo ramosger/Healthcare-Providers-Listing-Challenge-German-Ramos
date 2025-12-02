@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LogoutIcon } from "../../assets/icons";
+import { LogoutIcon } from "@assets/icons";
 
 type ProfileMenuProps = {
   name: string;
@@ -39,7 +39,10 @@ export const ProfileMenu = ({
       </button>
 
       {isOpen && (
-        <div id="profile-menu" className="absolute right-0 top-0 pt-10 lg:pt-12">
+        <div
+          id="profile-menu"
+          className="absolute right-0 top-0 pt-10 lg:pt-12"
+        >
           <div className="w-56 p-2 rounded-md shadow-[0px_1px_4px_0px_rgba(14,16,23,0.10)] outline-1 -outline-offset-1 outline-border-default inline-flex flex-col justify-start items-start bg-background-surface">
             <div className="self-stretch p-2 border-b border-border-default inline-flex flex-col justify-start items-start gap-2.5">
               <p className="self-stretch justify-start text-sm font-medium leading-5 text-text-primary">
