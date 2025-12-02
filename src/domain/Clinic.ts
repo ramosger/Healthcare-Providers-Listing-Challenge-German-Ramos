@@ -1,4 +1,4 @@
-export type ProviderClinics = {
+export type Clinic = {
   id: string;
   name: string;
   address: string;

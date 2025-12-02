@@ -1,9 +1,9 @@
+import type { Clinic } from "../../domain";
 import { LocationPinIcon } from "@assets/icons";
-import type { ProviderClinics } from "@domain";
 import { buildMapsUrl, buildFullAddress } from "@utils/maps";
 
 type ProviderLocationsProps = {
-  locations: ProviderClinics[];
+  locations: Clinic[];
 };
 
 export const ProviderLocations = ({ locations }: ProviderLocationsProps) => {

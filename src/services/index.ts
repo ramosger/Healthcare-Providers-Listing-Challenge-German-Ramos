@@ -1,1 +1,1 @@
-export * from "./providerService"
+export * from "./Provider"

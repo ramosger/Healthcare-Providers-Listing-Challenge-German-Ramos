@@ -1,18 +1,9 @@
-export const SPECIALITIES = [
-  "Cardiology",
-  "Dermatology",
-  "Pediatrics",
-  "Neurology",
-  "Oncology",
-];
+export const GENDERS = ["male", "female", "other"] as const;
 
-export const GENDERS = ["Male", "Female", "Other"];
-
-export const CLINICS = [
-  "Example Clinic",
-  "Example Clinic 1",
-  "Example Clinic 2",
-];
+export const GENDER_OPTIONS = GENDERS.map((g) => ({
+  label: g.charAt(0).toUpperCase() + g.slice(1),
+  value: g,
+}));
 
 export const DETAIL_TABS = {
   OVERVIEW: "overview",
@@ -20,3 +11,9 @@ export const DETAIL_TABS = {
 } as const;
 
 export type DetailTab = (typeof DETAIL_TABS)[keyof typeof DETAIL_TABS];
+
+export const PROVIDER_FILTER_KEYS = {
+  SPECIALTY: "specialtyId",
+  CLINIC: "clinicId",
+  GENDER: "gender",
+} as const;

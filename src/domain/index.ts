@@ -1,3 +1,3 @@
 export * from "./Provider"
-export * from "./ProviderClinics"
+export * from "./Clinic"
 export * from "./Specialty"

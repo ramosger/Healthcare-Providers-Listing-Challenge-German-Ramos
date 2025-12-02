@@ -1,4 +1,4 @@
-import type { ProviderClinics, Specialty } from "@domain";
+import type { Clinic, Specialty } from "@domain";
 
 export type Provider = {
   id: string;
@@ -7,7 +7,7 @@ export type Provider = {
   phone: string;
   gender: string;
   about: string;
-  clinics: ProviderClinics[];
+  clinics: Clinic[];
   profile_pic?: string;
   specialty: Specialty;
   languages: string[];

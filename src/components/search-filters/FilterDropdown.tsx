@@ -1,24 +1,30 @@
 import { useState } from "react";
-import { ChevronDownIcon } from "@assets/icons";
+import { ChevronDownIcon } from "../../assets/icons";
+import type { DropdownOption } from "../../shared";
 
 type FilterDropdownProps = {
   placeholder: string;
-  options: string[];
-  onChange?: (value: string) => void;
+  options: DropdownOption[];
+  value: string | null;
+  onChange?: (value: string | null) => void;
 };
 
 export const FilterDropdown = ({
   placeholder,
   options,
+  value,
   onChange,
 }: FilterDropdownProps) => {
-  const [selected, setSelected] = useState(placeholder);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSelect = (value: string) => {
-    setSelected(value);
+  const selectedOption =
+    options.find((option) => option.value === value) ?? null;
+
+  const displayText = selectedOption?.label ?? placeholder;
+
+  const handleSelect = (option: DropdownOption | null) => {
     setIsOpen(false);
-    onChange?.(value);
+    onChange?.(option ? option.value : null);
   };
 
   return (
@@ -31,7 +37,7 @@ export const FilterDropdown = ({
           <div className="flex-1 flex justify-start items-center overflow-hidden">
             <div className="flex-1 self-stretch px-3 py-1.5 flex justify-between items-center">
               <span className="flex-1 justify-start text-text-primary text-sm font-normal leading-5 line-clamp-1">
-                {selected}
+                {displayText}
               </span>
             </div>
 
@@ -45,24 +51,21 @@ export const FilterDropdown = ({
       </div>
 
       {isOpen && (
-        <div
-          className="absolute top-full mt-1 left-0 w-full max-h-60
-            overflow-y-auto bg-background-surface border border-border-default rounded-md shadow-md z-20"
-        >
+        <div className="absolute top-full mt-1 left-0 w-full max-h-60 overflow-y-auto bg-background-surface border border-border-default rounded-md shadow-md z-20">
           <button
             className="w-full text-left px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm"
-            onClick={() => handleSelect(placeholder)}
+            onClick={() => handleSelect(null)}
           >
             {placeholder}
           </button>
 
           {options.map((option) => (
             <button
-              key={option}
+              key={option.value}
               className="w-full text-left px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm"
               onClick={() => handleSelect(option)}
             >
-              {option}
+              {option.label}
             </button>
           ))}
         </div>
