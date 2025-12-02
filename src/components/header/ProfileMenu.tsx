@@ -1,0 +1,75 @@
+import { useEffect, useState } from "react";
+import { LogoutIcon } from "@assets/icons";
+
+type ProfileMenuProps = {
+  name: string;
+  email: string;
+  initials: string;
+  onLogout?: () => void;
+};
+
+export const ProfileMenu = ({
+  name,
+  email,
+  initials,
+  onLogout,
+}: ProfileMenuProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest("#profile-menu")) setIsOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
+
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="cursor-pointer size-8 text-white lg:size-10 font-light relative rounded-full overflow-hidden bg-background-brand"
+      >
+        {initials}
+      </button>
+
+      {isOpen && (
+        <div
+          id="profile-menu"
+          className="absolute right-0 top-0 pt-10 lg:pt-12"
+        >
+          <div className="w-56 p-2 rounded-md shadow-[0px_1px_4px_0px_rgba(14,16,23,0.10)] outline-1 -outline-offset-1 outline-border-default inline-flex flex-col justify-start items-start bg-background-surface">
+            <div className="self-stretch p-2 border-b border-border-default inline-flex flex-col justify-start items-start gap-2.5">
+              <p className="self-stretch justify-start text-sm font-medium leading-5 text-text-primary">
+                {name}
+              </p>
+              <p className="self-stretch justify-start text-xs font-normal leading-4 text-text-secondary">
+                {email}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              className="cursor-pointer self-stretch p-2 rounded-lg inline-flex justify-start items-center gap-2"
+              onClick={() => {
+                setIsOpen(false);
+                onLogout?.();
+              }}
+            >
+              <LogoutIcon />
+
+              <p className="self-stretch justify-start text-sm font-normal leading-5 line-clamp-1 text-text-primary">
+                Log out
+              </p>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
