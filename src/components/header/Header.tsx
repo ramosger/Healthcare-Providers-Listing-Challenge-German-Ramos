@@ -1,5 +1,5 @@
-import { ProfileMenu } from "..";
-import { LogoIcon } from "../../assets/icons";
+import { ProfileMenu } from "@components/header";
+import { LogoIcon } from "@assets/icons";
 
 export const Header = () => {
   return (

@@ -1,11 +1,15 @@
 import { useMemo } from "react";
-import { SearchFiltersHeader, NameFilter, FilterDropdown } from "..";
 import type { Provider } from "../../domain";
 import { GENDER_OPTIONS, PROVIDER_FILTER_KEYS } from "../../shared";
 import {
   buildProviderFilterOptions,
   type ProviderFilters,
 } from "../../services";
+import {
+  SearchFiltersHeader,
+  NameFilter,
+  FilterDropdown,
+} from "@components/search-filters";
 
 type SearchFiltersProps = {
   resultsCount: number;
@@ -36,6 +40,8 @@ export const SearchFilters = ({
         [key]: value,
       });
     };
+
+  const providerLabel = resultsCount === 1 ? "provider" : "providers";
 
   return (
     <section className="w-full mt-22 self-stretch px-6 lg:px-44 lg:pt-6 lg:pb-3 py-3 inline-flex flex-col justify-start items-start gap-4 lg:gap-7">
@@ -69,7 +75,7 @@ export const SearchFilters = ({
       </div>
 
       <p className="self-stretch justify-start text-text-secondary text-base font-medium leading-6">
-        {resultsCount} provider{resultsCount === 1 ? "" : "s"} found
+        {resultsCount} {providerLabel} found
       </p>
     </section>
   );

@@ -1,7 +1,9 @@
-import { PhoneIcon, MailIcon, WorldIcon } from "../../assets/icons";
-import type { Provider } from "../../domain";
-import { ProviderContactRow } from "./ProviderContactRow";
-import { ProviderOverviewSection } from "./ProviderOverviewSection";
+import { PhoneIcon, MailIcon, WorldIcon } from "@assets/icons";
+import type { Provider } from "@domain";
+import {
+  ProviderContactRow,
+  ProviderOverviewSection,
+} from "@components/provider";
 
 type ProviderOverviewProps = {
   about: Provider["about"];

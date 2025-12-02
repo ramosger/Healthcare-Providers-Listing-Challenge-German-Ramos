@@ -1,9 +1,10 @@
-import { useState, useMemo } from "react";
-import { ProviderCard, ProviderDetailsModal, SearchFilters } from "..";
-import type { Provider } from "../../domain";
-import { type ProviderFilters, initialProviderFilters } from "../../services";
-import { ErrorComponent, Spinner } from "../../shared";
+import type { Provider } from "@domain";
+import { type ProviderFilters, initialProviderFilters } from "@services";
+import { ErrorComponent, Spinner } from "@shared";
 import { useProviders } from "../../hooks";
+import { useMemo, useState } from "react";
+import { SearchFilters } from "@components/search-filters";
+import { ProviderCard, ProviderDetailsModal } from "..";
 
 export const ProvidersListing = () => {
   const [filters, setFilters] = useState<ProviderFilters>(

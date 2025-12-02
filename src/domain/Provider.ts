@@ -1,5 +1,4 @@
-import type { Clinic } from "./Clinic";
-import type { Specialty } from "./Specialty";
+import type { Clinic, Specialty } from "@domain";
 
 export type Provider = {
   id: string;
